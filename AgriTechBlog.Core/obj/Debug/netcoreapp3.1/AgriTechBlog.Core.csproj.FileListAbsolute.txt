@@ -1,0 +1,9 @@
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\bin\Debug\netcoreapp3.1\AgriTechBlog.Core.deps.json
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\bin\Debug\netcoreapp3.1\AgriTechBlog.Core.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\bin\Debug\netcoreapp3.1\AgriTechBlog.Core.pdb
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.AssemblyInfoInputs.cache
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.AssemblyInfo.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.csproj.CoreCompileInputs.cache
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.pdb
