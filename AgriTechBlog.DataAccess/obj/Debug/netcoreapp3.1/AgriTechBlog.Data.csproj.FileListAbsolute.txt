@@ -8,3 +8,4 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\bin\Deb
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\bin\Debug\netcoreapp3.1\AgriTechBlog.Data.pdb
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\obj\Debug\netcoreapp3.1\AgriTechBlog.Data.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\obj\Debug\netcoreapp3.1\AgriTechBlog.Data.pdb
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\obj\Debug\netcoreapp3.1\AgriTechBlog.Data.sourcelink.json
