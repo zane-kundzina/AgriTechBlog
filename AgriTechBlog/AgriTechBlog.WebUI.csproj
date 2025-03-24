@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AgriTechBlog.DataAccess\AgriTechBlog.Data.csproj" />
+    <ProjectReference Include="..\AgriTechBlog.Service\AgriTechBlog.Service.csproj" />
   </ItemGroup>
 
 </Project>

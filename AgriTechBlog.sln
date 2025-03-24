@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriTechBlog.Entity", "Agri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriTechBlog.Tests", "AgriTechBlog.Tests\AgriTechBlog.Tests.csproj", "{1AFE82CE-FBE5-42A8-A823-2C1F81FB2622}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriTechBlog.Service", "AgriTechBlog.Service\AgriTechBlog.Service.csproj", "{1B050962-A198-4CF0-BCCD-F831811D4C72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{1AFE82CE-FBE5-42A8-A823-2C1F81FB2622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AFE82CE-FBE5-42A8-A823-2C1F81FB2622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AFE82CE-FBE5-42A8-A823-2C1F81FB2622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B050962-A198-4CF0-BCCD-F831811D4C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B050962-A198-4CF0-BCCD-F831811D4C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B050962-A198-4CF0-BCCD-F831811D4C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B050962-A198-4CF0-BCCD-F831811D4C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -495,3 +495,13 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IdentityLayout.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Admin\_Layout.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminFooter\Default.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminSideNav\Default.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminTopNav\Default.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Create.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\_Layout.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb

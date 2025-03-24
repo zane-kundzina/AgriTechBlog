@@ -8,19 +8,16 @@ namespace AgriTechBlog.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string Title { get; set; }
-        [Required]
+        public Blog Blog { get; set; }
+        public string Title { get; set; }       
         public string Content { get; set; }
         public string ImageUrl { get; set; } 
-        public int Rank { get; set; }
-        [Required]
-        public string AuthorId { get; set; }    // string for Identity compatibility
-        [Required]
+        public int Rank { get; set; }       
+        public string AuthorId { get; set; }    // string for Identity compatibility        
         public virtual ApplicationUser Author { get; set; }
-        public string Category { get; set; }
-        [Required]
+        public string Category { get; set; }       
         public DateTime Created { get; set; } = DateTime.Now;
+        public Post Parent { get; set; }
         public List<Comment> MainComments { get; set; } = new List<Comment>();
     }
 }

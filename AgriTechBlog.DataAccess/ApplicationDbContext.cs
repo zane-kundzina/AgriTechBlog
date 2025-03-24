@@ -9,7 +9,10 @@ namespace AgriTechBlog.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) {}
         
-        //public DbSet<Post> Posts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
+
         //public DbSet<Comment> Comments { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)

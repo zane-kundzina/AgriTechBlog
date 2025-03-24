@@ -3793,6 +3793,19 @@
         "runtime": {
           "bin/placeholder/AgriTechBlog.Data.dll": {}
         }
+      },
+      "AgriTechBlog.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AgriTechBlog.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AgriTechBlog.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AgriTechBlog.Service.dll": {}
+        }
       }
     }
   },
@@ -10635,11 +10648,17 @@
       "type": "project",
       "path": "../AgriTechBlog.DataAccess/AgriTechBlog.Data.csproj",
       "msbuildProject": "../AgriTechBlog.DataAccess/AgriTechBlog.Data.csproj"
+    },
+    "AgriTechBlog.Service/1.0.0": {
+      "type": "project",
+      "path": "../AgriTechBlog.Service/AgriTechBlog.Service.csproj",
+      "msbuildProject": "../AgriTechBlog.Service/AgriTechBlog.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AgriTechBlog.Data >= 1.0.0",
+      "AgriTechBlog.Service >= 1.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "FluentValidation.AspNetCore >= 8.6.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.32",
@@ -10693,6 +10712,9 @@
           "projectReferences": {
             "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj": {
               "projectPath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj"
+            },
+            "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj": {
+              "projectPath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj"
             }
           }
         }
