@@ -15,7 +15,7 @@ namespace AgriTechBlog.WebUI.Configuration
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
             
-            servicesCollection.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            servicesCollection.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             
             servicesCollection.AddControllersWithViews();

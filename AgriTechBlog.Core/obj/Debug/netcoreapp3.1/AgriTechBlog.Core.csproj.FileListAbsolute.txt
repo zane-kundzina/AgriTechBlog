@@ -7,3 +7,4 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\net
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.csproj.CoreCompileInputs.cache
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.pdb
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Core\obj\Debug\netcoreapp3.1\AgriTechBlog.Core.sourcelink.json
