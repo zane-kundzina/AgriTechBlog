@@ -5,9 +5,9 @@ namespace AgriTechBlog.Data.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Required]
+        [PersonalData]
         public string FirstName { get; set; }
-        [Required]
+        [PersonalData]
         public string LastName { get; set; }
        
         public string Role { get; set; } // Admin, Writer, Reader

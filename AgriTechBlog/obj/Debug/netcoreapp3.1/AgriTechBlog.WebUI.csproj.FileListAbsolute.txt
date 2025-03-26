@@ -505,3 +505,4 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\_Layout.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Edit.cshtml.g.cs

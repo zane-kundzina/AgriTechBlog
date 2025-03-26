@@ -8,6 +8,10 @@ using AgriTechBlog.WebUI.BusinessManagers.Interfaces;
 using AgriTechBlog.WebUI.BusinessManagers;
 using AgriTechBlog.Service.Interfaces;
 using AgriTechBlog.Service;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Authorization;
+using AgriTechBlog.WebUI.Authorization;
 
 namespace AgriTechBlog.WebUI.Configuration
 {
@@ -24,12 +28,21 @@ namespace AgriTechBlog.WebUI.Configuration
             
             servicesCollection.AddControllersWithViews();
             servicesCollection.AddRazorPages();
+
+            servicesCollection.AddSingleton<IFileProvider>(new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
         }
 
         public static void AddCustomServices(this IServiceCollection servicesCollection)
         {
             servicesCollection.AddScoped<IBlogBusinessManager, BlogBusinessManager>();
+            servicesCollection.AddScoped<IAdminBusinessManager, AdminBusinessManager>();
+
             servicesCollection.AddScoped<IBlogService, BlogService>();
+        }
+
+        public static void AddCustomAuthorization(this IServiceCollection servicesCollection)
+        {
+            servicesCollection.AddTransient<IAuthorizationHandler, BlogAuthorizationHandler>();
         }
     }
 }
