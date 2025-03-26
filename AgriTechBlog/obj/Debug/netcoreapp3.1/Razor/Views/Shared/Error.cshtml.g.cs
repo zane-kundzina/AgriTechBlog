@@ -27,7 +27,7 @@ using AgriTechBlog
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"277d36ca5e25db3b80a3bee1001485254f4149b0278e8d89e86d250fd20cadbd", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"45db7363f285ae6ea7daee364c60c2e6c41c787aa5790340ac1652b93002f6b3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f25a8f06aefd7e0695b3f822734d76314d07f8b8e7c9f86421a48b483b6f6843", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<
 #nullable restore

@@ -30,7 +30,9 @@
     @await Component.InvokeAsync("Header")
 
     <!-- Body-->
-    @RenderBody();
+    <div class="content">
+        @RenderBody();
+    </div>
 
     <!-- Footer-->
     @await Component.InvokeAsync("Footer")

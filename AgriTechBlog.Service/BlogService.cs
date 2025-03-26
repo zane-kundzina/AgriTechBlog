@@ -23,6 +23,15 @@ namespace AgriTechBlog.Service
             return _applicationDbContext.Blogs.FirstOrDefault(blog  => blog.Id == blogid);
         }
 
+        public IEnumerable<Blog> GetBlogs(string searchString)
+        {
+            return _applicationDbContext.Blogs
+                .OrderByDescending(blog => blog.UpdatedDate)
+                .Include(blog => blog.Creator)
+                .Include(blog => blog.Posts)
+                .Where(blog => blog.Title.Contains(searchString) || blog.Content.Contains(searchString));
+        }
+
         public IEnumerable<Blog> GetBlogs(ApplicationUser applicationUser)
         {
             return _applicationDbContext.Blogs

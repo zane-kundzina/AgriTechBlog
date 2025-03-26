@@ -33,7 +33,7 @@ using AgriTechBlog
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"a6a50261799d4a476520a44db856d2b0b260c17571a26e985ea1ce6079575053", @"/Views/Shared/_LoginPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"45db7363f285ae6ea7daee364c60c2e6c41c787aa5790340ac1652b93002f6b3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f25a8f06aefd7e0695b3f822734d76314d07f8b8e7c9f86421a48b483b6f6843", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

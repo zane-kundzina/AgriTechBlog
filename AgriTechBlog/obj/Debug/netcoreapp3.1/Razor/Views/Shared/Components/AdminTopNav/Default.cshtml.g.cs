@@ -27,7 +27,7 @@ using AgriTechBlog.Data.Models
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"c293d9d3203d0aed42ea1bad1d3904e2c4c1e51dfbf6e551b1e024487b58fc39", @"/Views/Shared/Components/AdminTopNav/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"45db7363f285ae6ea7daee364c60c2e6c41c787aa5790340ac1652b93002f6b3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f25a8f06aefd7e0695b3f822734d76314d07f8b8e7c9f86421a48b483b6f6843", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Shared_Components_AdminTopNav_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

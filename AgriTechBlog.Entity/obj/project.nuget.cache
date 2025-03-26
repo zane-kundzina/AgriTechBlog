@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aqeLwEKufn0=",
+  "dgSpecHash": "laQre8EXa48=",
   "success": true,
   "projectFilePath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.Entity\\AgriTechBlog.Entity.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\pagedlist.core\\1.17.4\\pagedlist.core.1.17.4.nupkg.sha512",
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\pagedlist.core.mvc\\3.0.0\\pagedlist.core.mvc.3.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AgriTechBlog.Data.Models;
+using AgriTechBlog.WebUI.BusinessManagers.Interfaces;
 
 namespace AgriTechBlog.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IBlogBusinessManager _blogBusinessManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IBlogBusinessManager blogBusinessManager)
         {
-            _logger = logger;
+            _blogBusinessManager = blogBusinessManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, int? page)
         {
-            return View();
+            return View(_blogBusinessManager.GetIndexViewModel(searchString, page));
         }       
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
     }
 }
