@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace AgriTechBlog.WebUI.Models.BlogViewModels
+namespace AgriTechBlog.WebUI.Models.PostViewModels
 {
     public class EditViewModel
     {
         [Display(Name = "Header Image")]
-        public IFormFile BlogHeaderImage { get; set; }
-        public Blog Blog { get; set; }
+        public IFormFile HeaderImage { get; set; }
+        public Post Post { get; set; }
     }
 }

@@ -13,12 +13,12 @@ namespace AgriTechBlog.WebUI.BusinessManagers
     public class AdminBusinessManager : IAdminBusinessManager
     {
         private UserManager<ApplicationUser> _userManager;
-        private IBlogService _blogService;
+        private IPostService _postService;
 
-        public AdminBusinessManager(UserManager<ApplicationUser> userManager, IBlogService blogService)
+        public AdminBusinessManager(UserManager<ApplicationUser> userManager, IPostService postService)
         {
             _userManager = userManager;
-            _blogService = blogService;
+            _postService = postService;
         }
 
         public async Task<IndexViewModel> GetAdminDashboard(ClaimsPrincipal claimsPrincipal)
@@ -26,7 +26,7 @@ namespace AgriTechBlog.WebUI.BusinessManagers
             var applicationUser = await _userManager.GetUserAsync(claimsPrincipal);
             return new IndexViewModel
             {
-                Blogs = _blogService.GetBlogs(applicationUser)
+                Posts = _postService.GetPosts(applicationUser)
             };
         }
     }

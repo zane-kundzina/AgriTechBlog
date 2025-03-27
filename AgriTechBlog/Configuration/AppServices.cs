@@ -34,15 +34,15 @@ namespace AgriTechBlog.WebUI.Configuration
 
         public static void AddCustomServices(this IServiceCollection servicesCollection)
         {
-            servicesCollection.AddScoped<IBlogBusinessManager, BlogBusinessManager>();
+            servicesCollection.AddScoped<IPostBusinessManager, PostBusinessManager>();
             servicesCollection.AddScoped<IAdminBusinessManager, AdminBusinessManager>();
 
-            servicesCollection.AddScoped<IBlogService, BlogService>();
+            servicesCollection.AddScoped<IPostService, PostService>();
         }
 
         public static void AddCustomAuthorization(this IServiceCollection servicesCollection)
         {
-            servicesCollection.AddTransient<IAuthorizationHandler, BlogAuthorizationHandler>();
+            servicesCollection.AddTransient<IAuthorizationHandler, PostAuthorizationHandler>();
         }
     }
 }

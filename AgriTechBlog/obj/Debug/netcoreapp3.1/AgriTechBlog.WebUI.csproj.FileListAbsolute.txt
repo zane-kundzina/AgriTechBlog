@@ -396,7 +396,6 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\AgriTechBlog.WebUI.RazorCoreGenerate.cache
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -500,11 +499,11 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminFooter\Default.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminSideNav\Default.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminTopNav\Default.cshtml.g.cs
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Create.cshtml.g.cs
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\_Layout.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Edit.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\PagedList.Core.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\PagedList.Core.Mvc.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Create.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\_Layout.cshtml.g.cs

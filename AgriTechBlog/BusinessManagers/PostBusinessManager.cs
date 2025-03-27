@@ -2,7 +2,7 @@
 using AgriTechBlog.Service.Interfaces;
 using AgriTechBlog.WebUI.Authorization;
 using AgriTechBlog.WebUI.BusinessManagers.Interfaces;
-using AgriTechBlog.WebUI.Models.BlogViewModels;
+using AgriTechBlog.WebUI.Models.PostViewModels;
 using AgriTechBlog.WebUI.Models.HomeViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -18,21 +18,21 @@ using System.Threading.Tasks;
 
 namespace AgriTechBlog.WebUI.BusinessManagers
 {
-    public class BlogBusinessManager: IBlogBusinessManager
+    public class PostBusinessManager: IPostBusinessManager
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IBlogService _blogService;
+        private readonly IPostService _postService;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IAuthorizationService _authorizationService;
 
-        public BlogBusinessManager(
+        public PostBusinessManager(
             UserManager<ApplicationUser> userManager, 
-            IBlogService blogService, 
+            IPostService postService, 
             IWebHostEnvironment webHostEnvironment, 
             IAuthorizationService authorizationService) 
         {
             _userManager = userManager;
-            _blogService = blogService;
+            _postService = postService;
             _webHostEnvironment = webHostEnvironment;
             _authorizationService = authorizationService;
         }
@@ -41,71 +41,71 @@ namespace AgriTechBlog.WebUI.BusinessManagers
         {
             int pageSize = 20;
             int pageNumber = page ?? 1;
-            var blogs = _blogService.GetBlogs(searchString ?? string.Empty)
-                .Where(blog => blog.Published);
+            var posts = _postService.GetPosts(searchString ?? string.Empty)
+                .Where(post => post.Published);
             //.Where(blog => blog.Published && blog.Approved);
 
             return new IndexViewModel
             {
-                Blogs = new StaticPagedList<Blog>(blogs.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, blogs.Count()),
+                Posts = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
                 SearchString = searchString,
                 PageNumber = pageNumber
             };
         }
 
-        public async Task<Blog> CreateBlog(CreateViewModel createViewModel, ClaimsPrincipal claimsPrincipal)
+        public async Task<Post> CreatePost(CreateViewModel createViewModel, ClaimsPrincipal claimsPrincipal)
         {
-            Blog blog = createViewModel.Blog;
-            blog.Creator = await _userManager.GetUserAsync(claimsPrincipal);
-            blog.CreatedDate = DateTime.Now;
-            blog.UpdatedDate = DateTime.Now;    // in db invalid column name, check the reason
+            Post post = createViewModel.Post;
+            post.Creator = await _userManager.GetUserAsync(claimsPrincipal);
+            post.CreatedDate = DateTime.Now;
+            post.UpdatedDate = DateTime.Now;
 
-            blog = await _blogService.Add(blog);
+            post = await _postService.Add(post);
             string webRootPath = _webHostEnvironment.WebRootPath;
-            string pathToImage =$@"{webRootPath}\UserFiles\Blogs\{blog.Id}\HeaderImage.jpg";
+            string pathToImage =$@"{webRootPath}\UserFiles\Posts\{post.Id}\HeaderImage.jpg";
 
             EnsureFolder(pathToImage);
 
             using (var fileStream = new FileStream(pathToImage, FileMode.Create))
             {
-                await createViewModel.BlogHeaderImage.CopyToAsync(fileStream);
+                await createViewModel.HeaderImage.CopyToAsync(fileStream);
             }
 
-            return blog;            
+            return post;            
         }
 
-        public async Task<ActionResult<EditViewModel>> UpdateBlog(EditViewModel editViewModel, ClaimsPrincipal claimsPrincipal)
+        public async Task<ActionResult<EditViewModel>> UpdatePost(EditViewModel editViewModel, ClaimsPrincipal claimsPrincipal)
         {
-            var blog = _blogService.GetBlog(editViewModel.Blog.Id);
+            var post = _postService.GetPost(editViewModel.Post.Id);
 
-            if (blog is null)
+            if (post is null)
                 return new NotFoundResult();
 
-            var authorizationResult = await _authorizationService.AuthorizeAsync(claimsPrincipal, blog, Operations.Update);
+            var authorizationResult = await _authorizationService.AuthorizeAsync(claimsPrincipal, post, Operations.Update);
 
             if (!authorizationResult.Succeeded) return DetermineActionResult(claimsPrincipal);
 
-            blog.Published = editViewModel.Blog.Published;
-            blog.Title = editViewModel.Blog.Title;
-            blog.Content = editViewModel.Blog.Content;
-            blog.UpdatedDate = DateTime.Now;
+            post.Published = editViewModel.Post.Published;
+            post.Title = editViewModel.Post.Title;
+            post.Content = editViewModel.Post.Content;
+            post.UpdatedDate = DateTime.Now;
 
-            if (editViewModel.BlogHeaderImage != null)
+            if (editViewModel.HeaderImage != null)
             {
                 string webRootPath = _webHostEnvironment.WebRootPath;
-                string pathToImage = $@"{webRootPath}\UserFiles\Posts\{blog.Id}\HeaderImage.jpg";
+                string pathToImage = $@"{webRootPath}\UserFiles\Posts\{post.Id}\HeaderImage.jpg";
 
                 EnsureFolder(pathToImage);
 
                 using (var fileStream = new FileStream(pathToImage, FileMode.Create))
                 {
-                    await editViewModel.BlogHeaderImage.CopyToAsync(fileStream);
+                    await editViewModel.HeaderImage.CopyToAsync(fileStream);
                 }
             }
 
             return new EditViewModel
             {
-                Blog = await _blogService.Update(blog)
+                Post = await _postService.Update(post)
             };
         }
 
@@ -114,19 +114,19 @@ namespace AgriTechBlog.WebUI.BusinessManagers
             if (id is null)
                 return new BadRequestResult();
 
-            var blogId = id.Value;
-            var blog = _blogService.GetBlog(blogId);
+            var postId = id.Value;
+            var post = _postService.GetPost(postId);
 
-            if (blog is null)
+            if (post is null)
                 return new NotFoundResult();
 
-            var authorizationResult = await _authorizationService.AuthorizeAsync(claimsPrincipal, blog, Operations.Update);
+            var authorizationResult = await _authorizationService.AuthorizeAsync(claimsPrincipal, post, Operations.Update);
 
             if (!authorizationResult.Succeeded) return DetermineActionResult(claimsPrincipal);                          
 
             return new EditViewModel
             {
-                Blog = blog
+                Post = post
             };
         }
 

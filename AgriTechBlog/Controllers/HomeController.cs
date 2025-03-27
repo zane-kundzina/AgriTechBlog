@@ -12,16 +12,16 @@ namespace AgriTechBlog.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IBlogBusinessManager _blogBusinessManager;
+        private readonly IPostBusinessManager _postBusinessManager;
 
-        public HomeController(IBlogBusinessManager blogBusinessManager)
+        public HomeController(IPostBusinessManager postBusinessManager)
         {
-            _blogBusinessManager = blogBusinessManager;
+            _postBusinessManager = postBusinessManager;
         }
 
         public IActionResult Index(string searchString, int? page)
         {
-            return View(_blogBusinessManager.GetIndexViewModel(searchString, page));
+            return View(_postBusinessManager.GetIndexViewModel(searchString, page));
         }       
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

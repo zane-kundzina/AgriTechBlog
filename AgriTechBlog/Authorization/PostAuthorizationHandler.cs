@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AgriTechBlog.WebUI.Authorization
 {
-    public class BlogAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Blog>
+    public class PostAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Post>
     {
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public BlogAuthorizationHandler(UserManager<ApplicationUser> userManager)
+        public PostAuthorizationHandler(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
 
-        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Blog resource)
+        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, OperationAuthorizationRequirement requirement, Post resource)
         {
             var applicationUser = await _userManager.GetUserAsync(context.User);
 

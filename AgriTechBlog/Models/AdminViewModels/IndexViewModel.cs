@@ -6,6 +6,6 @@ namespace AgriTechBlog.WebUI.Models.AdminViewModels
 {
     public class IndexViewModel
     {
-        public IEnumerable<Blog> Blogs { get; set; }
+        public IEnumerable<Post> Posts { get; set; }
     }
 }
