@@ -11,7 +11,9 @@ namespace AgriTechBlog.Service.Interfaces
         Post GetPost(int postid);
         IEnumerable<Post> GetPosts(string searchString);
         IEnumerable<Post> GetPosts(ApplicationUser applicationUser);
+        Comment GetComment(int commentId);
         Task<Post> Add(Post post);
+        Task<Comment> Add(Comment comment);
         Task<Post> Update(Post post);
     }
 }

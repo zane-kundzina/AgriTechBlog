@@ -36,8 +36,11 @@ namespace AgriTechBlog.WebUI.Configuration
         {
             servicesCollection.AddScoped<IPostBusinessManager, PostBusinessManager>();
             servicesCollection.AddScoped<IAdminBusinessManager, AdminBusinessManager>();
+            servicesCollection.AddScoped<IHomeBusinessManager, HomeBusinessManager>();
+
 
             servicesCollection.AddScoped<IPostService, PostService>();
+            servicesCollection.AddScoped<IUserService, UserService>();
         }
 
         public static void AddCustomAuthorization(this IServiceCollection servicesCollection)

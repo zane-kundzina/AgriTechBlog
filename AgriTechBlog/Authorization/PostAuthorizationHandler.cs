@@ -25,7 +25,10 @@ namespace AgriTechBlog.WebUI.Authorization
             }
 
             if (requirement.Name == Operations.Read.Name && !resource.Published && applicationUser == resource.Creator)
-                context.Succeed(requirement);
+            {  
+                context.Succeed(requirement); 
+            }
+               
         }
     }
 }

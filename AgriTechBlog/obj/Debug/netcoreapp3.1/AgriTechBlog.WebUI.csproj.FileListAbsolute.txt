@@ -507,3 +507,6 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\_Layout.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Admin\About.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Author.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomeLayout.cshtml.g.cs

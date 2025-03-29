@@ -24,6 +24,9 @@ namespace AgriTechBlog.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("AboutContent")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
@@ -71,6 +74,9 @@ namespace AgriTechBlog.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubHeader")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -310,7 +316,7 @@ namespace AgriTechBlog.Data.Migrations
                         .HasForeignKey("AuthorId");
 
                     b.HasOne("AgriTechBlog.Data.Models.Comment", "Parent")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("ParentId");
 
                     b.HasOne("AgriTechBlog.Data.Models.Post", "Post")

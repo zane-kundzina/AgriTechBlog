@@ -20,7 +20,14 @@ namespace AgriTechBlog.Service
        
         public Post GetPost(int postid)
         {
-            return _applicationDbContext.Posts.FirstOrDefault(post  => post.Id == postid);
+            return _applicationDbContext.Posts
+                .Include(post => post.Creator)
+                .Include(post => post.Comments)
+                    .ThenInclude(comment => comment.Author)
+                .Include(post => post.Comments)
+                    .ThenInclude(comment => comment.Comments)
+                        .ThenInclude(reply => reply.Parent)
+                .FirstOrDefault(post  => post.Id == postid);
         }
 
         public IEnumerable<Post> GetPosts(string searchString)
@@ -41,11 +48,27 @@ namespace AgriTechBlog.Service
                 .Where(post => post.Creator == applicationUser);
         }
 
+        public Comment GetComment(int commentId)
+        {
+            return _applicationDbContext.Comments
+                .Include(comment => comment.Author)
+                .Include(comment => comment.Post)
+                .Include(comment => comment.Parent)
+                .FirstOrDefault(comment => comment.Id == commentId);
+        }
+
         public async Task<Post> Add(Post post)
         {
             _applicationDbContext.Add(post);
             await _applicationDbContext.SaveChangesAsync();
             return post;
+        }
+
+        public async Task<Comment> Add(Comment comment)
+        {
+            _applicationDbContext.Add(comment);
+            await _applicationDbContext.SaveChangesAsync();
+            return comment;
         }
 
         public async Task<Post> Update(Post post)

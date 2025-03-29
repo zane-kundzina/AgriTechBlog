@@ -33,7 +33,7 @@ using AgriTechBlog.Data.Models
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c6368", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f25a8f06aefd7e0695b3f822734d76314d07f8b8e7c9f86421a48b483b6f6843", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"1020110a793f87cd0716de8968efca8edce0b5fcb00d107a1806db8b9f8c2772", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<
 #nullable restore
@@ -80,14 +80,15 @@ using AgriTechBlog.Data.Models
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper;
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
+        private global::AgriTechBlog.WebUI.TagHelpers.HidePagerHelper __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper;
         private global::PagedList.Core.Mvc.PagerTagHelper __PagedList_Core_Mvc_PagerTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"container\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c63687439", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c63687559", async() => {
                 WriteLiteral("\r\n        <div class=\"input-group mb-3\">\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c63687777", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c63687897", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -143,7 +144,7 @@ using AgriTechBlog.Data.Models
 #nullable disable
 
             WriteLiteral("            <div class=\"col-lg-4 col-md-3 mb-4\">\r\n                <div class=\"card border-0 shadow\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636811850", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636811970", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -170,7 +171,7 @@ using AgriTechBlog.Data.Models
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    <div class=\"card-body\">\r\n                        <div class=\"row text-center\" style=\"margin: 0px auto 10px 0px;\">\r\n                            <h5 class=\"card-title text-center w-100\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636813819", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636813939", async() => {
                 Write(
 #nullable restore
 #line 21 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
@@ -221,26 +222,16 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-            WriteLiteral("    </div>\r\n    <div");
-            BeginWriteAttribute("list", " list=\"", 1331, "\"", 1350, 1);
-            WriteAttributeValue("", 1338, 
-#nullable restore
-#line 28 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
-                Model.Posts
-
-#line default
-#line hidden
-#nullable disable
-            , 1338, 12, false);
-            EndWriteAttribute();
-            WriteLiteral(" count=\"20\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636817431", async() => {
-            }
-            );
-            __PagedList_Core_Mvc_PagerTagHelper = CreateTagHelper<global::PagedList.Core.Mvc.PagerTagHelper>();
-            __tagHelperExecutionContext.Add(__PagedList_Core_Mvc_PagerTagHelper);
-            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
-            __PagedList_Core_Mvc_PagerTagHelper.List = 
+            WriteLiteral("    </div>\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636817108", async() => {
+                WriteLiteral("\r\n        ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9d4f5e932167a8ea52fb6c8f69b2757aa639f87062e61c670b767fbecc2c636817398", async() => {
+                }
+                );
+                __PagedList_Core_Mvc_PagerTagHelper = CreateTagHelper<global::PagedList.Core.Mvc.PagerTagHelper>();
+                __tagHelperExecutionContext.Add(__PagedList_Core_Mvc_PagerTagHelper);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+                __PagedList_Core_Mvc_PagerTagHelper.List = 
 #nullable restore
 #line 29 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
                                               Model.Posts
@@ -248,9 +239,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-            ;
-            __tagHelperExecutionContext.AddTagHelperAttribute("list", __PagedList_Core_Mvc_PagerTagHelper.List, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-            __PagedList_Core_Mvc_PagerTagHelper.Options = 
+                ;
+                __tagHelperExecutionContext.AddTagHelperAttribute("list", __PagedList_Core_Mvc_PagerTagHelper.List, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __PagedList_Core_Mvc_PagerTagHelper.Options = 
 #nullable restore
 #line 29 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
                                                                      PagedListRenderOptions.Bootstrap4PageNumbersPlusPrevAndNext
@@ -258,18 +249,18 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-            ;
-            __tagHelperExecutionContext.AddTagHelperAttribute("options", __PagedList_Core_Mvc_PagerTagHelper.Options, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-            __PagedList_Core_Mvc_PagerTagHelper.AspAction = (string)__tagHelperAttribute_4.Value;
-            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
-            __PagedList_Core_Mvc_PagerTagHelper.AspController = (string)__tagHelperAttribute_3.Value;
-            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
-            if (__PagedList_Core_Mvc_PagerTagHelper.RouteValues == null)
-            {
-                throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-query", "PagedList.Core.Mvc.PagerTagHelper", "RouteValues"));
-            }
-            BeginWriteTagHelperAttribute();
-            WriteLiteral(
+                ;
+                __tagHelperExecutionContext.AddTagHelperAttribute("options", __PagedList_Core_Mvc_PagerTagHelper.Options, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __PagedList_Core_Mvc_PagerTagHelper.AspAction = (string)__tagHelperAttribute_4.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
+                __PagedList_Core_Mvc_PagerTagHelper.AspController = (string)__tagHelperAttribute_3.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+                if (__PagedList_Core_Mvc_PagerTagHelper.RouteValues == null)
+                {
+                    throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-query", "PagedList.Core.Mvc.PagerTagHelper", "RouteValues"));
+                }
+                BeginWriteTagHelperAttribute();
+                WriteLiteral(
 #nullable restore
 #line 29 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
                                                                                                                                                                                              Model.SearchString
@@ -277,10 +268,42 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
+                );
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __PagedList_Core_Mvc_PagerTagHelper.RouteValues["query"] = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-query", __PagedList_Core_Mvc_PagerTagHelper.RouteValues["query"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("\r\n    ");
+            }
             );
-            __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-            __PagedList_Core_Mvc_PagerTagHelper.RouteValues["query"] = __tagHelperStringValueBuffer;
-            __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-query", __PagedList_Core_Mvc_PagerTagHelper.RouteValues["query"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper = CreateTagHelper<global::AgriTechBlog.WebUI.TagHelpers.HidePagerHelper>();
+            __tagHelperExecutionContext.Add(__AgriTechBlog_WebUI_TagHelpers_HidePagerHelper);
+            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List = 
+#nullable restore
+#line 28 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
+                Model.Posts
+
+#line default
+#line hidden
+#nullable disable
+            ;
+            __tagHelperExecutionContext.AddTagHelperAttribute("list", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count = 
+#nullable restore
+#line 28 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Home\Index.cshtml"
+                                    20
+
+#line default
+#line hidden
+#nullable disable
+            ;
+            __tagHelperExecutionContext.AddTagHelperAttribute("count", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
             {
@@ -288,7 +311,7 @@ using AgriTechBlog.Data.Models
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\r\n    </div>\r\n</div>");
+            WriteLiteral("\r\n</div>");
         }
         #pragma warning restore 1998
         #nullable restore

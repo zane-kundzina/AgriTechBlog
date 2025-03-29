@@ -13,5 +13,7 @@ namespace AgriTechBlog.Data.Models
         public virtual ApplicationUser Author { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public Comment Parent { get; set; }
+        public virtual IEnumerable<Comment> Comments { get; set; }
+
     }
 }
