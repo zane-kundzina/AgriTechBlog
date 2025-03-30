@@ -3,13 +3,17 @@
 
 <div class="container">
     <form asp-controller="Home" asp-action="Index" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group mb-3">
+        <div class="input-group">
             <input asp-for="SearchString" type="text" class="form-control" placeholder="Search posts for..." />
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" style="padding: 0 10px 0 10px">Search</button>
+                <button class="btn btn-outline-secondary" type="submit" style="margin-left: 10px;">Search</button>
             </div>
         </div>
     </form>
+
+    <!-- Space before posts -->
+    <hr style="margin: 30px 0; border-top: 1px solid #ddd;" />
+
     <div class="row align-content-center">
         @foreach (var post in Model.Posts)
         {
@@ -18,7 +22,7 @@
                     <img src="~/UserFiles/Posts/@post.Id/HeaderImage.jpg" class="card-img-top">
                     <div class="card-body">
                         <div class="row text-center" style="margin: 0px auto 10px 0px;">
-                            <h5 class="card-title text-center w-100"><a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a></h5>
+                            <h6 class="card-title text-center w-100"><a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a></h6>
                         </div>
                     </div>
                 </div>
