@@ -32,7 +32,7 @@ namespace AgriTechBlog.WebUI.BusinessManagers
             if (applicationUser is null)
                 return new NotFoundResult();
 
-            int pageSize = 20;
+            int pageSize = 6;
             int pageNumber = page ?? 1;
 
             var posts = _postService.GetPosts(searchString ?? string.Empty)
