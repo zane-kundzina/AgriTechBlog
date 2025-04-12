@@ -9,10 +9,10 @@ namespace AgriTechBlog.Data.Models
         [Key]
         public int Id { get; set; }
         public Post Post { get; set; }
+        public ApplicationUser Author { get; set; }
         public string Content { get; set; }
-        public virtual ApplicationUser Author { get; set; }
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
         public Comment Parent { get; set; }
+        public DateTime CreatedOn { get; set; }       
         public virtual IEnumerable<Comment> Comments { get; set; }
 
     }

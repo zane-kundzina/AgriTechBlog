@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgriTechBlog.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+622bd046b5359028cf299171b3c4b99b12c72759")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78076c75500f492212707b6807859686f40ba3d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgriTechBlog.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgriTechBlog.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
