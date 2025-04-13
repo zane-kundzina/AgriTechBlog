@@ -64,7 +64,7 @@ namespace AgriTechBlog.WebUI.Areas.Identity.Pages.Account
             public string FirstName { get; set; }
 
             [Required]
-            [Display(Name = "Lats Name")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
         }
 

@@ -40,7 +40,7 @@ namespace AgriTechBlog.WebUI.BusinessManagers
 
         public IndexViewModel GetIndexViewModel(string searchString, int? page)
         {
-            int pageSize = 20;
+            int pageSize = 6;
             int pageNumber = page ?? 1;
             var posts = _postService.GetPosts(searchString ?? string.Empty)
                 .Where(post => post.Published);
