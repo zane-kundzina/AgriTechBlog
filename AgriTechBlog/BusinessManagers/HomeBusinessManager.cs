@@ -41,7 +41,6 @@ namespace AgriTechBlog.WebUI.BusinessManagers
             return new AuthorViewModel
             {
                 Author = applicationUser,
-                //Posts = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
                 Posts = posts.ToPagedList(pageNumber, pageSize),
                 SearchString = searchString,
                 PageNumber = pageNumber

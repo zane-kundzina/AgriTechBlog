@@ -59,4 +59,28 @@
             })
         </div>
     </div>
+
+    <!-- Space before Last Commented posts -->
+    <hr style="margin: 30px 0; border-top: 1px solid #ddd;" />
+
+    <h3 class="mb-4">🔥 3 Most Recently Commented Posts</h3>
+
+    <div class="row align-content-center">
+        @foreach (var post in Model.LastCommentedPosts)
+        {
+            <div class="col-lg-4 col-md-3 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="~/UserFiles/Posts/@post.Id/HeaderImage.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <div class="row text-center" style="margin: 0px auto 10px 0px;">
+                            <h6 class="card-title text-center w-100">
+                                <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">@post.Title</a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
 </div>

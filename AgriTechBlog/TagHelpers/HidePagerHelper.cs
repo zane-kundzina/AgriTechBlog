@@ -10,16 +10,7 @@ namespace AgriTechBlog.WebUI.TagHelpers
 
     public class HidePagerHelper : TagHelper
     {
-        // If there are less than 6 posts (just for 1 page, it will hide pager - previous/next)
-
-        //public IEnumerable<object> List { get; set; }
-        //public int Count { get; set; }
-
-        //public override void Process(TagHelperContext context, TagHelperOutput output)
-        //{
-        //    if (List.Count() <= Count)
-        //        output.SuppressOutput();
-        //}
+        // If there are less than 6 posts (just for 1 page, it will hide pager - previous/next)       
 
         public IPagedList PagedList { get; set; }
 

@@ -39,7 +39,7 @@ using X.PagedList.Mvc.Core
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"88b566fb6037d808e663a39b0b3fd9b7f3d004b405a137349aa6fbd6d9300c2f", @"/Views/Admin/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"0b6ccb050f77a720fa1a81d6aa514c3f0798537d0a15d4a7082ae518d8afcecb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"465d76d4372a65c2309efc8bb40e5655f3bac16b5616315236b21ff769bfb4d8", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Admin__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

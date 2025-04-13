@@ -42,16 +42,22 @@ namespace AgriTechBlog.WebUI.BusinessManagers
         {
             int pageSize = 6;
             int pageNumber = page ?? 1;
+
             var posts = _postService.GetPosts(searchString ?? string.Empty)
                 .Where(post => post.Published);
-            //.Where(blog => blog.Published && blog.Approved);
+
+            var lastCommented = _postService.GetPosts(string.Empty)
+                .Where(p => p.Comments.Any())
+                .OrderByDescending(p => p.Comments.Max(c => c.CreatedOn))
+                .Take(3)
+                .ToList();
 
             return new IndexViewModel
             {
-                //Posts = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
                 Posts = posts.ToPagedList(pageNumber, pageSize),
                 SearchString = searchString,
-                PageNumber = pageNumber
+                PageNumber = pageNumber,
+                LastCommentedPosts = lastCommented
             };
         }
 

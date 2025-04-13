@@ -45,7 +45,7 @@ using X.PagedList.Mvc.Core
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"67766cd574aecf14f368d8ea22470618c8237aa9eaabe798253a62fd1b389d8e", @"/Views/Shared/Components/AdminSideNav/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"0b6ccb050f77a720fa1a81d6aa514c3f0798537d0a15d4a7082ae518d8afcecb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"465d76d4372a65c2309efc8bb40e5655f3bac16b5616315236b21ff769bfb4d8", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Shared_Components_AdminSideNav_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
