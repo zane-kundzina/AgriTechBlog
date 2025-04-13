@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Host;
-using PagedList.Core;
 using System;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AgriTechBlog.Service;
+using X.PagedList;
 
 namespace AgriTechBlog.WebUI.BusinessManagers
 {
@@ -48,7 +48,8 @@ namespace AgriTechBlog.WebUI.BusinessManagers
 
             return new IndexViewModel
             {
-                Posts = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
+                //Posts = new StaticPagedList<Post>(posts.Skip((pageNumber - 1) * pageSize).Take(pageSize), pageNumber, pageSize, posts.Count()),
+                Posts = posts.ToPagedList(pageNumber, pageSize),
                 SearchString = searchString,
                 PageNumber = pageNumber
             };

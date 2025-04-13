@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "lw2nKOFmmvw=",
+  "dgSpecHash": "MBA26dRmm9Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.Business\\AgriTechBlog.Business.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\zane.kundzina\\.nuget\\packages\\pagedlist.core\\1.17.4\\pagedlist.core.1.17.4.nupkg.sha512",
-    "C:\\Users\\zane.kundzina\\.nuget\\packages\\pagedlist.core.mvc\\3.0.0\\pagedlist.core.mvc.3.0.0.nupkg.sha512"
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\jetbrains.annotations\\2021.1.0\\jetbrains.annotations.2021.1.0.nupkg.sha512",
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\x.pagedlist\\8.1.0\\x.pagedlist.8.1.0.nupkg.sha512",
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\x.pagedlist.mvc.core\\8.1.0\\x.pagedlist.mvc.core.8.1.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,8 +1,11 @@
 ﻿@model AgriTechBlog.WebUI.Models.HomeViewModels.IndexViewModel
-@using PagedList.Core.Mvc
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
 
 <div class="container">
     <form asp-controller="Home" asp-action="Index" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        
+        <!-- Search box & button on the home page -->
         <div class="input-group">
             <input asp-for="SearchString" type="text" class="form-control" placeholder="Search posts for..." />
             <div class="input-group-append">
@@ -29,7 +32,31 @@
             </div>
         }
     </div>
-    <div list="@Model.Posts" count="20">
-        <pager class="pager-container" list="@Model.Posts" options="@PagedListRenderOptions.Bootstrap4PageNumbersPlusPrevAndNext" asp-action="Index" asp-controller="Home" asp-route-query="@Model.SearchString" />
+    
+    <!--PAGINATOR-->
+    <div class="row">
+        <div paged-list="@Model.Posts">
+            @Html.PagedListPager(
+                Model.Posts, 
+                page => Url.Action("Index", new { page, searchString = Model.SearchString }),
+            new PagedListRenderOptions
+            {
+                DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                DisplayLinkToIndividualPages = true,
+                MaximumPageNumbersToDisplay = 5,
+                LinkToFirstPageFormat = "« First",
+                LinkToPreviousPageFormat = "‹ Prev",
+                LinkToNextPageFormat = "Next ›",
+                LinkToLastPageFormat = "Last »",
+                ClassToApplyToFirstListItemInPager = "page-item",
+                ClassToApplyToLastListItemInPager = "page-item",
+                UlElementClasses = new[] { "pagination", "justify-content-center" },
+                LiElementClasses = new[] { "page-item" },
+                PageClasses = new[] { "page-link" }
+            })
+        </div>
     </div>
 </div>

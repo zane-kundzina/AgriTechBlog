@@ -24,10 +24,22 @@ using AgriTechBlog.Data.Models
 
 #nullable disable
     ;
+#nullable restore
+#line 3 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\_ViewImports.cshtml"
+using X.PagedList
+
+#nullable disable
+    ;
+#nullable restore
+#line 4 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\_ViewImports.cshtml"
+using X.PagedList.Mvc.Core
+
+#nullable disable
+    ;
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c", @"/Views/Home/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"1020110a793f87cd0716de8968efca8edce0b5fcb00d107a1806db8b9f8c2772", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"0b6ccb050f77a720fa1a81d6aa514c3f0798537d0a15d4a7082ae518d8afcecb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Home__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -65,7 +77,7 @@ using AgriTechBlog.Data.Models
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c5768", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c6107", async() => {
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\r\n    <meta name=\"description\"");
                 BeginWriteAttribute("content", " content=\"", 195, "\"", 205, 0);
                 EndWriteAttribute();
@@ -73,7 +85,7 @@ using AgriTechBlog.Data.Models
                 BeginWriteAttribute("content", " content=\"", 234, "\"", 244, 0);
                 EndWriteAttribute();
                 WriteLiteral(" />\r\n    \r\n    <title>Clean Blog - Start Bootstrap Theme</title>\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c6638", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c6977", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -97,7 +109,7 @@ using AgriTechBlog.Data.Models
     <link href=""https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"" rel=""stylesheet"" type=""text/css"" />
     <!-- Core theme CSS (includes Bootstrap)-->
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c8474", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c8813", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -124,7 +136,7 @@ using AgriTechBlog.Data.Models
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c10487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c10826", async() => {
                 WriteLiteral("\r\n    <!-- Navigation-->\r\n    ");
                 Write(
 #nullable restore
@@ -166,7 +178,7 @@ using AgriTechBlog.Data.Models
 #nullable disable
                 );
                 WriteLiteral("\r\n    \r\n    <!-- Bootstrap core JS-->\r\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js\"></script>\r\n    <!-- Core theme JS-->\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c12294", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "659feeb857e7c257dbba8e0138f821a39fa652af56c0998a1e8dd8e882b42d6c12633", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

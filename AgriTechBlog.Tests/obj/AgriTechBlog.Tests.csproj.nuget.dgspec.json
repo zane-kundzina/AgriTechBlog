@@ -50,9 +50,13 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "PagedList.Core.Mvc": {
+            "X.PagedList": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[8.1.0, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.1.0, )"
             }
           },
           "imports": [

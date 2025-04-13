@@ -25,6 +25,18 @@ using AgriTechBlog.Data.Models
 #nullable disable
     ;
 #nullable restore
+#line 3 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\_ViewImports.cshtml"
+using X.PagedList
+
+#nullable disable
+    ;
+#nullable restore
+#line 4 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\_ViewImports.cshtml"
+using X.PagedList.Mvc.Core
+
+#nullable disable
+    ;
+#nullable restore
 #line 10 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
  using System.Web
 
@@ -33,7 +45,7 @@ using AgriTechBlog.Data.Models
     #line default
     #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a", @"/Views/Post/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"1020110a793f87cd0716de8968efca8edce0b5fcb00d107a1806db8b9f8c2772", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"0b6ccb050f77a720fa1a81d6aa514c3f0798537d0a15d4a7082ae518d8afcecb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     internal sealed class Views_Post_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<
 #nullable restore
@@ -53,9 +65,6 @@ using AgriTechBlog.Data.Models
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rows", new global::Microsoft.AspNetCore.Html.HtmlString("3"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_6 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Comment", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_7 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("comment-list"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_8 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("margin-left: 30px; margin-top:0;"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_9 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("comment-list  comment-top"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
         #pragma warning disable 0649
         private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
@@ -76,7 +85,6 @@ using AgriTechBlog.Data.Models
                 return __backed__tagHelperScopeManager;
             }
         }
-        private global::AgriTechBlog.WebUI.TagHelpers.HidePagerHelper __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
@@ -119,9 +127,19 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
             );
-            WriteLiteral(" Comments</h3>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("ul", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a9212", async() => {
-                WriteLiteral("\r\n");
+            WriteLiteral(" Comments</h3>\r\n                <ul class=\"comment-list  comment-top\"");
+            BeginWriteAttribute("list", " list=\"", 901, "\"", 928, 1);
+            WriteAttributeValue("", 908, 
+#nullable restore
+#line 22 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
+                                                             Model.Post.Comments
+
+#line default
+#line hidden
+#nullable disable
+            , 908, 20, false);
+            EndWriteAttribute();
+            WriteLiteral(" count=\"0\">\r\n");
 #nullable restore
 #line 23 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                      foreach (var comment in Model.Post.Comments.Where(comment => comment.Parent is null))
@@ -131,8 +149,8 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                        <li class=\"comment\" style=\"margin-top: 30px;\">\r\n                            <div class=\"comment-body\">\r\n                                <h4 class=\"commenter-name\">");
-                Write(
+            WriteLiteral("                        <li class=\"comment\" style=\"margin-top: 30px;\">\r\n                            <div class=\"comment-body\">\r\n                                <h4 class=\"commenter-name\">");
+            Write(
 #nullable restore
 #line 27 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                             comment.Author.FirstName
@@ -140,9 +158,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                );
-                WriteLiteral(" ");
-                Write(
+            );
+            WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 27 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                                       comment.Author.LastName
@@ -150,9 +168,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                );
-                WriteLiteral("</h4>\r\n                                <div class=\"comment-date\">");
-                Write(
+            );
+            WriteLiteral("</h4>\r\n                                <div class=\"comment-date\">");
+            Write(
 #nullable restore
 #line 28 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                            comment.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")
@@ -160,9 +178,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                );
-                WriteLiteral("</div>\r\n                                <p class=\"comment-message\">");
-                Write(
+            );
+            WriteLiteral("</div>\r\n                                <p class=\"comment-message\">");
+            Write(
 #nullable restore
 #line 29 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                             comment.Content
@@ -170,8 +188,8 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                );
-                WriteLiteral("</p>\r\n");
+            );
+            WriteLiteral("</p>\r\n");
 #nullable restore
 #line 30 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                  if (!User.Identity.IsAuthenticated)
@@ -181,25 +199,25 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a11890", async() => {
-                    WriteLiteral("Login to reply");
-                }
-                );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
-                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_0);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Area = (string)__tagHelperAttribute_1.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Page = (string)__tagHelperAttribute_2.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
-                if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
-                {
-                    throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-ReturnUrl", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
-                }
-                BeginWriteTagHelperAttribute();
-                WriteLiteral("~/Post/");
-                WriteLiteral(
+            WriteLiteral("                                    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a11202", async() => {
+                WriteLiteral("Login to reply");
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_0);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Area = (string)__tagHelperAttribute_1.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Page = (string)__tagHelperAttribute_2.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
+            if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
+            {
+                throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-ReturnUrl", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+            }
+            BeginWriteTagHelperAttribute();
+            WriteLiteral("~/Post/");
+            WriteLiteral(
 #nullable restore
 #line 32 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                                                                                         Model.Post.Id
@@ -207,18 +225,18 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                );
-                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ReturnUrl"] = __tagHelperStringValueBuffer;
-                __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-ReturnUrl", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ReturnUrl"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n");
+            );
+            __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ReturnUrl"] = __tagHelperStringValueBuffer;
+            __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-ReturnUrl", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["ReturnUrl"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n");
 #nullable restore
 #line 33 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                 }
@@ -229,9 +247,9 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                                    <a aria-expanded=\"false\"");
-                BeginWriteAttribute("href", " href=\"", 1960, "\"", 1998, 1);
-                WriteAttributeValue("", 1967, 
+            WriteLiteral("                                    <a aria-expanded=\"false\"");
+            BeginWriteAttribute("href", " href=\"", 1960, "\"", 1998, 1);
+            WriteAttributeValue("", 1967, 
 #nullable restore
 #line 36 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                      $"#replyComment{comment.Id}"
@@ -239,9 +257,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                , 1967, 31, false);
-                EndWriteAttribute();
-                WriteLiteral(" data-toggle=\"collapse\" class=\"reply-btn btn\">Reply</a>\r\n");
+            , 1967, 31, false);
+            EndWriteAttribute();
+            WriteLiteral(" data-toggle=\"collapse\" class=\"reply-btn btn\">Reply</a>\r\n");
 #nullable restore
 #line 37 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                 }
@@ -250,7 +268,7 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                            </div>\r\n");
+            WriteLiteral("                            </div>\r\n");
 #nullable restore
 #line 39 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                              if (User.Identity.IsAuthenticated)
@@ -260,9 +278,9 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                                <div class=\"collapse\"");
-                BeginWriteAttribute("id", " id=\"", 2276, "\"", 2311, 1);
-                WriteAttributeValue("", 2281, 
+            WriteLiteral("                                <div class=\"collapse\"");
+            BeginWriteAttribute("id", " id=\"", 2276, "\"", 2311, 1);
+            WriteAttributeValue("", 2281, 
 #nullable restore
 #line 41 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                             $"replyComment{comment.Id}"
@@ -270,17 +288,17 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                , 2281, 30, false);
-                EndWriteAttribute();
-                WriteLiteral(">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a16778", async() => {
-                    WriteLiteral("\r\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a17109", async() => {
-                    }
-                    );
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
-                    __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
+            , 2281, 30, false);
+            EndWriteAttribute();
+            WriteLiteral(">\r\n                                    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a15918", async() => {
+                WriteLiteral("\r\n                                        ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a16241", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 43 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                         Post.Id
@@ -288,99 +306,14 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                    );
-                    __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                    BeginWriteTagHelperAttribute();
-                    __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                    __tagHelperExecutionContext.AddHtmlAttribute("readonly", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
-                    BeginWriteTagHelperAttribute();
-                    __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                    __tagHelperExecutionContext.AddHtmlAttribute("hidden", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
-                    await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                    if (!__tagHelperExecutionContext.Output.IsContentModified)
-                    {
-                        await __tagHelperExecutionContext.SetOutputContentAsync();
-                    }
-                    Write(__tagHelperExecutionContext.Output);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                    WriteLiteral("\r\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a19490", async() => {
-                    }
-                    );
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
-                    __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
-#nullable restore
-#line 44 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                        Comment.Parent.Id
-
-#line default
-#line hidden
-#nullable disable
-                    );
-                    __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                    BeginWriteTagHelperAttribute();
-                    WriteLiteral(
-#nullable restore
-#line 44 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                                                   comment.Id
-
-#line default
-#line hidden
-#nullable disable
-                    );
-                    __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
-                    __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                    BeginWriteTagHelperAttribute();
-                    __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                    __tagHelperExecutionContext.AddHtmlAttribute("readonly", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
-                    BeginWriteTagHelperAttribute();
-                    __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
-                    __tagHelperExecutionContext.AddHtmlAttribute("hidden", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
-                    await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                    if (!__tagHelperExecutionContext.Output.IsContentModified)
-                    {
-                        await __tagHelperExecutionContext.SetOutputContentAsync();
-                    }
-                    Write(__tagHelperExecutionContext.Output);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                    WriteLiteral("\r\n                                        <div class=\"form-group\">\r\n                                            <label for=\"comment\">Write a reply</label>\r\n                                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a22840", async() => {
-                    }
-                    );
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
-                    __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
-                    __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
-#nullable restore
-#line 47 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                               Comment.Content
-
-#line default
-#line hidden
-#nullable disable
-                    );
-                    __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                    __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
-                    __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
-                    await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                    if (!__tagHelperExecutionContext.Output.IsContentModified)
-                    {
-                        await __tagHelperExecutionContext.SetOutputContentAsync();
-                    }
-                    Write(__tagHelperExecutionContext.Output);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                    WriteLiteral("\r\n                                            <button type=\"submit\" class=\"btn btn-outline-primary post-btn\">Post</button>\r\n                                        </div>\r\n                                    ");
-                }
                 );
-                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
-                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Controller = (string)__tagHelperAttribute_5.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
-                __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Action = (string)__tagHelperAttribute_6.Value;
-                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                BeginWriteTagHelperAttribute();
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __tagHelperExecutionContext.AddHtmlAttribute("readonly", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
+                BeginWriteTagHelperAttribute();
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __tagHelperExecutionContext.AddHtmlAttribute("hidden", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
                 {
@@ -388,7 +321,92 @@ using AgriTechBlog.Data.Models
                 }
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n                                </div>\r\n");
+                WriteLiteral("\r\n                                        ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a18534", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
+#nullable restore
+#line 44 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
+                                                        Comment.Parent.Id
+
+#line default
+#line hidden
+#nullable disable
+                );
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                BeginWriteTagHelperAttribute();
+                WriteLiteral(
+#nullable restore
+#line 44 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
+                                                                                   comment.Id
+
+#line default
+#line hidden
+#nullable disable
+                );
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                BeginWriteTagHelperAttribute();
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __tagHelperExecutionContext.AddHtmlAttribute("readonly", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
+                BeginWriteTagHelperAttribute();
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __tagHelperExecutionContext.AddHtmlAttribute("hidden", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("\r\n                                        <div class=\"form-group\">\r\n                                            <label for=\"comment\">Write a reply</label>\r\n                                            ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a21772", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
+#nullable restore
+#line 47 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
+                                                               Comment.Content
+
+#line default
+#line hidden
+#nullable disable
+                );
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral("\r\n                                            <button type=\"submit\" class=\"btn btn-outline-primary post-btn\">Post</button>\r\n                                        </div>\r\n                                    ");
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Controller = (string)__tagHelperAttribute_5.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Action = (string)__tagHelperAttribute_6.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n                                </div>\r\n");
 #nullable restore
 #line 52 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                             }
@@ -397,9 +415,19 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("ul", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a26702", async() => {
-                    WriteLiteral("\r\n");
+            WriteLiteral("                            <ul class=\"comment-list\"");
+            BeginWriteAttribute("list", " list=\"", 3217, "\"", 3241, 1);
+            WriteAttributeValue("", 3224, 
+#nullable restore
+#line 53 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
+                                                            comment.Comments
+
+#line default
+#line hidden
+#nullable disable
+            , 3224, 17, false);
+            EndWriteAttribute();
+            WriteLiteral(" count=\"0\" style=\"margin-left: 30px; margin-top:0;\">\r\n");
 #nullable restore
 #line 54 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                  foreach (var reply in comment.Comments)
@@ -409,8 +437,8 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                    WriteLiteral("                                    <li class=\"comment\">\r\n                                        <div class=\"comment-body\">\r\n                                            <h3 class=\"commenter-name\">");
-                    Write(
+            WriteLiteral("                                    <li class=\"comment\">\r\n                                        <div class=\"comment-body\">\r\n                                            <h3 class=\"commenter-name\">");
+            Write(
 #nullable restore
 #line 58 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                         reply.Author.FirstName
@@ -418,9 +446,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                    );
-                    WriteLiteral(" ");
-                    Write(
+            );
+            WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 58 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                                                 reply.Author.LastName
@@ -428,9 +456,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                    );
-                    WriteLiteral("</h3>\r\n                                            <div class=\"comment-date\">");
-                    Write(
+            );
+            WriteLiteral("</h3>\r\n                                            <div class=\"comment-date\">");
+            Write(
 #nullable restore
 #line 59 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                        reply.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")
@@ -438,9 +466,9 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                    );
-                    WriteLiteral("</div>\r\n                                            <p class=\"comment-message\">");
-                    Write(
+            );
+            WriteLiteral("</div>\r\n                                            <p class=\"comment-message\">");
+            Write(
 #nullable restore
 #line 60 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                                                         reply.Content
@@ -448,8 +476,8 @@ using AgriTechBlog.Data.Models
 #line default
 #line hidden
 #nullable disable
-                    );
-                    WriteLiteral("</p>\r\n                                        </div>\r\n                                    </li>\r\n");
+            );
+            WriteLiteral("</p>\r\n                                        </div>\r\n                                    </li>\r\n");
 #nullable restore
 #line 63 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                                 }
@@ -458,41 +486,7 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                    WriteLiteral("                            ");
-                }
-                );
-                __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper = CreateTagHelper<global::AgriTechBlog.WebUI.TagHelpers.HidePagerHelper>();
-                __tagHelperExecutionContext.Add(__AgriTechBlog_WebUI_TagHelpers_HidePagerHelper);
-                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
-                __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List = 
-#nullable restore
-#line 53 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                            comment.Comments
-
-#line default
-#line hidden
-#nullable disable
-                ;
-                __tagHelperExecutionContext.AddTagHelperAttribute("list", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count = 
-#nullable restore
-#line 53 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                                                     0
-
-#line default
-#line hidden
-#nullable disable
-                ;
-                __tagHelperExecutionContext.AddTagHelperAttribute("count", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-                __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
-                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-                if (!__tagHelperExecutionContext.Output.IsContentModified)
-                {
-                    await __tagHelperExecutionContext.SetOutputContentAsync();
-                }
-                Write(__tagHelperExecutionContext.Output);
-                __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                WriteLiteral("\r\n                        </li>\r\n                        <hr />\r\n");
+            WriteLiteral("                            </ul>\r\n                        </li>\r\n                        <hr />\r\n");
 #nullable restore
 #line 67 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                     }
@@ -501,40 +495,7 @@ using AgriTechBlog.Data.Models
 #line hidden
 #nullable disable
 
-                WriteLiteral("                ");
-            }
-            );
-            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper = CreateTagHelper<global::AgriTechBlog.WebUI.TagHelpers.HidePagerHelper>();
-            __tagHelperExecutionContext.Add(__AgriTechBlog_WebUI_TagHelpers_HidePagerHelper);
-            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
-            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List = 
-#nullable restore
-#line 22 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                             Model.Post.Comments
-
-#line default
-#line hidden
-#nullable disable
-            ;
-            __tagHelperExecutionContext.AddTagHelperAttribute("list", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.List, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-            __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count = 
-#nullable restore
-#line 22 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
-                                                                                         0
-
-#line default
-#line hidden
-#nullable disable
-            ;
-            __tagHelperExecutionContext.AddTagHelperAttribute("count", __AgriTechBlog_WebUI_TagHelpers_HidePagerHelper.Count, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
-            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
-            if (!__tagHelperExecutionContext.Output.IsContentModified)
-            {
-                await __tagHelperExecutionContext.SetOutputContentAsync();
-            }
-            Write(__tagHelperExecutionContext.Output);
-            __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            WriteLiteral("\r\n\r\n");
+            WriteLiteral("                </ul>\r\n\r\n");
 #nullable restore
 #line 70 "C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\Views\Post\Index.cshtml"
                  if (User.Identity.IsAuthenticated)
@@ -545,9 +506,9 @@ using AgriTechBlog.Data.Models
 #nullable disable
 
             WriteLiteral("                    <div>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a34024", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a29094", async() => {
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a34335", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a29405", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -576,7 +537,7 @@ using AgriTechBlog.Data.Models
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            <div class=\"form-group\">\r\n                                <label for=\"comment\">Comment</label>\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a36740", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a31810", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
@@ -633,7 +594,7 @@ using AgriTechBlog.Data.Models
 #nullable disable
 
             WriteLiteral("                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a40758", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93c03a11a95cf3d6bc8b7ead99e2b36a273bfa48c70c295d56a7c66b2ea3437a35828", async() => {
                 WriteLiteral("Login to Comment on this Post");
             }
             );

@@ -1,5 +1,6 @@
 ﻿using AgriTechBlog.Data.Models;
-using PagedList.Core;
+using X.PagedList;
+
 
 namespace AgriTechBlog.WebUI.Models.HomeViewModels
 {

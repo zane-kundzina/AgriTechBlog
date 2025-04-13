@@ -1,5 +1,5 @@
 ﻿@model AgriTechBlog.WebUI.Models.HomeViewModels.AuthorViewModel
-@using PagedList.Core.Mvc
+
 @{
     Layout = "_HomeLayout";
     ViewData["HeaderImage"] = $"../../UserFiles/Users/{Model.Author.Id}/HeaderImage.jpg";
@@ -44,8 +44,9 @@
                         </div>
                     }
                 </div>
-                <div list="@Model.Posts" count="20">
-                    <pager class="pager-container" list="@Model.Posts" options="@PagedListRenderOptions.Bootstrap4PageNumbersPlusPrevAndNext" asp-action="Index" asp-controller="Home" asp-route-query="@Model.SearchString" />
+                <div paged-list="@Model.Posts">
+                    <!-- Your pagination UI (e.g., page links) -->
+                    @Html.PagedListPager(Model.Posts, page => Url.Action("Index", new { page, searchString = Model.SearchString }))
                 </div>
             </div>
         </div>

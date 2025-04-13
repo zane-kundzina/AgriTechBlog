@@ -501,8 +501,6 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AdminTopNav\Default.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\PagedList.Core.dll
-C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\PagedList.Core.Mvc.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Create.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Edit.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
@@ -510,3 +508,6 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Admin\About.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Home\Author.cshtml.g.cs
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HomeLayout.cshtml.g.cs
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
