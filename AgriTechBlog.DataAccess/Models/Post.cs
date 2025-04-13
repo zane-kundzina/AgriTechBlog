@@ -19,5 +19,7 @@ namespace AgriTechBlog.Data.Models
         public bool Approved { get; set; }
         public ApplicationUser Approver { get; set; }
         public virtual IEnumerable<Comment> Comments { get; set; }
+        public ICollection<PostReaction> Reactions { get; set; } = new List<PostReaction>();
+
     }
 }

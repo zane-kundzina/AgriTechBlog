@@ -11,5 +11,7 @@ namespace AgriTechBlog.WebUI.Models.HomeViewModels
         public string SearchString { get; set; }
         public int PageNumber { get; set; }
         public List<Post> LastCommentedPosts { get; set; }
+        public List<Post> MostLikedPosts { get; set; } = new List<Post>();
+
     }
 }

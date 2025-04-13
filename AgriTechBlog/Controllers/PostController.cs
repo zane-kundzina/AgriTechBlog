@@ -1,8 +1,13 @@
-﻿using AgriTechBlog.WebUI.BusinessManagers;
+﻿using AgriTechBlog.Data;
+using AgriTechBlog.Data.Models;
+using AgriTechBlog.WebUI.BusinessManagers;
 using AgriTechBlog.WebUI.BusinessManagers.Interfaces;
 using AgriTechBlog.WebUI.Models.PostViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AgriTechBlog.WebUI.Controllers
@@ -10,14 +15,18 @@ namespace AgriTechBlog.WebUI.Controllers
     [Authorize]
     public class PostController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly IPostBusinessManager _postBusinessManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public PostController(IPostBusinessManager postBusinessManager)
+        public PostController(ApplicationDbContext context, IPostBusinessManager postBusinessManager, UserManager<ApplicationUser> userManager)
         {
+            _context = context;
             _postBusinessManager = postBusinessManager;
+            _userManager = userManager;
         }
 
-        [Route("Post/{id}"), AllowAnonymous]
+        [Route("Post/{id}", Name = "PostDetails"), AllowAnonymous]
         public async Task<IActionResult> Index(int? id)
         {
             var actionResult = await _postBusinessManager.GetPostViewModel(id, User);
@@ -71,5 +80,37 @@ namespace AgriTechBlog.WebUI.Controllers
 
             return actionResult.Result;
         }
+
+        [HttpPost]
+        public IActionResult ReactToPost(int postId, bool isLike)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var existingReaction = _context.PostReactions
+                .FirstOrDefault(r => r.PostId == postId && r.UserId == userId);
+
+            if (existingReaction != null)
+            {
+                if (existingReaction.IsLike == isLike)
+                    _context.PostReactions.Remove(existingReaction); // unreact
+                else
+                    existingReaction.IsLike = isLike; // change reaction
+                    _context.PostReactions.Update(existingReaction);            }
+            else
+            {
+                var reaction = new PostReaction
+                {
+                    PostId = postId,
+                    UserId = userId,
+                    IsLike = isLike
+                };
+                
+                _context.PostReactions.Add(reaction);
+            }
+
+            _context.SaveChanges();
+            return RedirectToRoute("PostDetails", new { id = postId });
+        }
+
     }
 }

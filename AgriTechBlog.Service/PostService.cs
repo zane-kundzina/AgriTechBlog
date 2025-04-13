@@ -22,6 +22,7 @@ namespace AgriTechBlog.Service
         {
             return _applicationDbContext.Posts
                 .Include(post => post.Creator)
+                .Include(post => post.Reactions)
                 .Include(post => post.Comments)
                     .ThenInclude(comment => comment.Author)
                 .Include(post => post.Comments)
@@ -30,12 +31,12 @@ namespace AgriTechBlog.Service
                 .FirstOrDefault(post  => post.Id == postid);
         }
 
-        public IEnumerable<Post> GetPosts(string searchString)
+        public IQueryable<Post> GetPosts(string searchString)
         {
             return _applicationDbContext.Posts
-                .OrderByDescending(post => post.UpdatedDate)
                 .Include(post => post.Creator)
                 .Include(post => post.Comments)
+                .Include(post => post.Reactions)
                 .Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
         }
 
