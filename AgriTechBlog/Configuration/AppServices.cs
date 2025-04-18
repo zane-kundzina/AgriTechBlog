@@ -12,6 +12,7 @@ using Microsoft.Extensions.FileProviders;
 using System.IO;
 using Microsoft.AspNetCore.Authorization;
 using AgriTechBlog.WebUI.Authorization;
+using System;
 
 namespace AgriTechBlog.WebUI.Configuration
 {
@@ -25,7 +26,16 @@ namespace AgriTechBlog.WebUI.Configuration
             
             servicesCollection.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            
+
+            servicesCollection.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Identity/Account/Login";
+                options.LogoutPath = "/Identity/Account/Logout";
+                options.ExpireTimeSpan = TimeSpan.FromDays(14); // Persistent duration
+                options.SlidingExpiration = true;
+                options.Cookie.IsEssential = true; // Optional: for GDPR compliance
+            });
+
             servicesCollection.AddControllersWithViews();
             servicesCollection.AddRazorPages();
 

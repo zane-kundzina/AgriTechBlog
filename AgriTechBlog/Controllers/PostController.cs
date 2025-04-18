@@ -56,7 +56,8 @@ namespace AgriTechBlog.WebUI.Controllers
         public async Task<IActionResult> Add(CreateViewModel createViewModel)
         {
             await _postBusinessManager.CreatePost(createViewModel, User);
-            return RedirectToAction("Create");
+            //return RedirectToAction("Create");
+            return RedirectToAction("Index", "Admin");
         }
 
         [HttpPost]
@@ -112,5 +113,53 @@ namespace AgriTechBlog.WebUI.Controllers
             return RedirectToRoute("PostDetails", new { id = postId });
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var post = _context.Posts
+                .Include(p => p.Comments)
+                .Include(p => p.Reactions)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (post == null) return NotFound();
+
+            var userId = _userManager.GetUserId(User);
+            if (post.CreatorID != userId && !User.IsInRole("Admin"))
+                return Forbid();
+
+            _context.Posts.Remove(post);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Post deleted successfully!";
+            return RedirectToAction("Index", "Admin");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ToggleVisibility(int id)
+        {
+            var post = await _context.Posts
+                .Include(p => p.Creator)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (post == null)
+                return NotFound();
+
+            var userId = _userManager.GetUserId(User);
+
+            if (post.Creator?.Id != userId && !User.IsInRole("Admin"))
+                return Forbid();
+
+            post.Published = !post.Published;
+            _context.Update(post);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = post.Published
+                ? "Post has been made public again!"
+                : "Post has been hidden successfully.";
+
+            return RedirectToAction("Index", "Admin");
+        }
     }
 }

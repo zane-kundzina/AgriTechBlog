@@ -118,7 +118,7 @@ namespace AgriTechBlog.Data.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PostId")
+                    b.Property<int>("PostId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -152,7 +152,7 @@ namespace AgriTechBlog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreatorId")
+                    b.Property<string>("CreatorID")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("Published")
@@ -169,7 +169,7 @@ namespace AgriTechBlog.Data.Migrations
 
                     b.HasIndex("ApproverId");
 
-                    b.HasIndex("CreatorId");
+                    b.HasIndex("CreatorID");
 
                     b.ToTable("Posts");
                 });
@@ -346,7 +346,9 @@ namespace AgriTechBlog.Data.Migrations
 
                     b.HasOne("AgriTechBlog.Data.Models.Post", "Post")
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AgriTechBlog.Data.Models.Post", b =>
@@ -357,7 +359,7 @@ namespace AgriTechBlog.Data.Migrations
 
                     b.HasOne("AgriTechBlog.Data.Models.ApplicationUser", "Creator")
                         .WithMany()
-                        .HasForeignKey("CreatorId");
+                        .HasForeignKey("CreatorID");
                 });
 
             modelBuilder.Entity("AgriTechBlog.Data.Models.PostReaction", b =>

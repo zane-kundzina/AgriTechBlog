@@ -8,12 +8,21 @@ namespace AgriTechBlog.Data.Models
     {
         [Key]
         public int Id { get; set; }
+
+        public int PostId { get; set; }
         public Post Post { get; set; }
+
+        public string AuthorId { get; set; }
         public ApplicationUser Author { get; set; }
+       
         public string Content { get; set; }
+
+        public int? ParentId { get; set; }
         public Comment Parent { get; set; }
-        public DateTime CreatedOn { get; set; }       
-        public virtual IEnumerable<Comment> Comments { get; set; }
+        
+        public DateTime CreatedOn { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>(); // child replies
 
     }
 }

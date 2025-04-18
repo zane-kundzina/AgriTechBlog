@@ -45,7 +45,8 @@ namespace AgriTechBlog.WebUI.BusinessManagers
 
             var posts = _postService.GetPosts(searchString ?? string.Empty)
                 .Where(p => p.Published)
-                .OrderByDescending(p => p.UpdatedDate);
+                .OrderByDescending(p => p.UpdatedDate)
+                .ToList();
             ;
 
             var lastCommented = _postService.GetPosts(string.Empty)
