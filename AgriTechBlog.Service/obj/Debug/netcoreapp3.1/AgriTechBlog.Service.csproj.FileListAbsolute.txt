@@ -1,3 +1,4 @@
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.deps.json
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
