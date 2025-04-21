@@ -1,9 +1,12 @@
 ﻿using AgriTechBlog.Data.Models;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AgriTechBlog.WebUI.Models.PostViewModels
 {
+    [ExcludeFromCodeCoverage]
+
     public class CreateViewModel
     {
         [Required, Display(Name ="Header Image")]

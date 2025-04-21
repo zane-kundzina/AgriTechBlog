@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AgriTechBlog.Data.Models
 {
+    [ExcludeFromCodeCoverage]
+
     public class ApplicationUser : IdentityUser
     {
         [PersonalData]

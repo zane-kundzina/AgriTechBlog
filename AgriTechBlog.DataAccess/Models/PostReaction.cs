@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace AgriTechBlog.Data.Models
 {
+    [ExcludeFromCodeCoverage]
+
     public class PostReaction
     {
         public int Id { get; set; }

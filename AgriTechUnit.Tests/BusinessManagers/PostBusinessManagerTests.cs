@@ -143,6 +143,32 @@ namespace AgriTechUnit.Tests.BusinessManagers
         }
 
         [Fact]
+        public async Task GetPostViewModel_ReturnsPostViewModel_WhenPostIsUnpublishedAndAuthorized()
+        {
+            // Arrange
+            var post = new Post { Id = 1, Published = false };
+            _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
+
+            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, "testuser") });
+            var claims = new ClaimsPrincipal(identity);
+
+            _authServiceMock.Setup(a =>
+                a.AuthorizeAsync(
+                    It.Is<ClaimsPrincipal>(cp => cp == claims),
+                    post,
+                    It.Is<IEnumerable<IAuthorizationRequirement>>(r => IsOperationRequirement(r, Operations.Read.Name))
+                )
+            ).ReturnsAsync(AuthorizationResult.Success());
+
+            // Act
+            var result = await _manager.GetPostViewModel(1, claims);
+
+            // Assert
+            var vm = Assert.IsType<PostViewModel>(result.Value);
+            Assert.Equal(post, vm.Post);
+        }
+
+        [Fact]
         public async Task GetEditViewModel_ReturnsForbid_WhenUnauthorized()
         {
             // Arrange
@@ -162,6 +188,71 @@ namespace AgriTechUnit.Tests.BusinessManagers
 
             // Assert
             Assert.IsType<ForbidResult>(result.Result);
+        }
+
+        [Fact]
+        public async Task GetEditViewModel_ReturnsBadRequest_WhenIdIsNull()
+        {
+            var result = await _manager.GetEditViewModel(null, new ClaimsPrincipal());
+
+            Assert.IsType<BadRequestResult>(result.Result);
+        }
+
+        [Fact]
+        public async Task GetEditViewModel_ReturnsNotFound_WhenPostDoesNotExist()
+        {
+            _postServiceMock.Setup(p => p.GetPost(1)).Returns((Post)null!);
+
+            var result = await _manager.GetEditViewModel(1, new ClaimsPrincipal());
+
+            Assert.IsType<NotFoundResult>(result.Result);
+        }
+
+        [Fact]
+        public async Task GetEditViewModel_ReturnsForbidOrChallenge_WhenUnauthorized()
+        {
+            var post = new Post { Id = 1 };
+            _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
+
+            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, "testuser") }, "Test");
+            var claims = new ClaimsPrincipal(identity);
+
+            _authServiceMock.Setup(a =>
+                a.AuthorizeAsync(
+                    It.Is<ClaimsPrincipal>(cp => cp == claims),
+                    post,
+                    It.Is<IEnumerable<IAuthorizationRequirement>>(r => IsOperationRequirement(r, Operations.Update.Name))
+                )
+            ).ReturnsAsync(AuthorizationResult.Failed());
+
+            var result = await _manager.GetEditViewModel(1, claims);
+
+            Assert.True(
+                result.Result is ForbidResult || result.Result is ChallengeResult
+            );
+        }
+
+        [Fact]
+        public async Task GetEditViewModel_ReturnsEditViewModel_WhenAuthorized()
+        {
+            var post = new Post { Id = 1 };
+            _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
+
+            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, "testuser") }, "Test");
+            var claims = new ClaimsPrincipal(identity);
+
+            _authServiceMock.Setup(a =>
+                a.AuthorizeAsync(
+                    It.Is<ClaimsPrincipal>(cp => cp == claims),
+                    post,
+                    It.Is<IEnumerable<IAuthorizationRequirement>>(r => IsOperationRequirement(r, Operations.Update.Name))
+                )
+            ).ReturnsAsync(AuthorizationResult.Success());
+
+            var result = await _manager.GetEditViewModel(1, claims);
+
+            var vm = Assert.IsType<EditViewModel>(result.Value);
+            Assert.Equal(post, vm.Post);
         }
 
         [Fact]
@@ -333,10 +424,58 @@ namespace AgriTechUnit.Tests.BusinessManagers
             Assert.IsType<NotFoundResult>(result.Result);
         }
 
+        [Fact]
+        public async Task CreateComment_ReturnsCreatedComment_WhenValid()
+        {
+            // Arrange
+            var user = new ApplicationUser { Id = "user1", UserName = "TestUser" };
+            var post = new Post { Id = 1 };
+            var parentComment = new Comment { Id = 2, Content = "Parent Comment" };
+
+            var comment = new Comment
+            {
+                Content = "New Comment",
+                Parent = new Comment { Id = 2 } // just an ID, actual object will be fetched
+            };
+
+            var postViewModel = new PostViewModel
+            {
+                Post = post,
+                Comment = comment
+            };
+
+            var claims = new ClaimsPrincipal(new ClaimsIdentity(new[]
+            { new Claim(ClaimTypes.NameIdentifier, user.Id) }));
+
+            _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
+            _postServiceMock.Setup(p => p.GetComment(2)).Returns(parentComment);
+            _userManagerMock.Setup(u => u.GetUserAsync(claims)).ReturnsAsync(user);
+            _postServiceMock.Setup(p => p.Add(It.IsAny<Comment>())).ReturnsAsync((Comment c) => c);
+
+            // Act
+            var result = await _manager.CreateComment(postViewModel, claims);
+
+            // Assert
+            var okResult = Assert.IsType<ActionResult<Comment>>(result);
+            var returnedComment = Assert.IsType<Comment>(okResult.Value);
+            Assert.Equal("New Comment", returnedComment.Content);
+            Assert.Equal(user, returnedComment.Author);
+            Assert.Equal(post, returnedComment.Post);
+            Assert.Equal(parentComment, returnedComment.Parent);
+        }
+
         private static Mock<UserManager<TUser>> MockUserManager<TUser>() where TUser : class
         {
             var store = new Mock<IUserStore<TUser>>();
             return new Mock<UserManager<TUser>>(store.Object, null, null, null, null, null, null, null, null);
+        }
+
+        // Helper method to avoid pattern-matching and allow complex logic
+        private static bool IsOperationRequirement(IEnumerable<IAuthorizationRequirement> requirements, string operationName)
+        {
+            return requirements
+                .OfType<OperationAuthorizationRequirement>()
+                .Any(r => r.Name == operationName);
         }
     }
 }

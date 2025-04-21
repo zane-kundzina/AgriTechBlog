@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgriTechBlog.WebUI")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6d1dc6899054bcc7acd7ecbf2e57171ef7860a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08b5810f869e788a7036b1be544a4e85e8295e46")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgriTechBlog.WebUI.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
