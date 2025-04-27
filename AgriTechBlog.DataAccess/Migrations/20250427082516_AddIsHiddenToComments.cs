@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AgriTechBlog.Data.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class AddIsHiddenToComments : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

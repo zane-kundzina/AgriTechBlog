@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Xunit;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using AgriTechBlog.WebUI.Models.CommentViewModels;
 
 namespace AgriTechUnit.Tests.Controllers
 {
@@ -38,6 +39,16 @@ namespace AgriTechUnit.Tests.Controllers
             _context = new ApplicationDbContext(options);
 
             _controller = new PostController(_context, _postBusinessManagerMock.Object, _userManagerMock.Object);
+
+            var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
+            {
+            new Claim(ClaimTypes.NameIdentifier, "user1")
+            }, "mock"));
+
+            _controller.ControllerContext = new ControllerContext()
+            {
+                HttpContext = new DefaultHttpContext() { User = user }
+            };
         }
 
         private ApplicationDbContext GetInMemoryDbContext()
@@ -134,6 +145,148 @@ namespace AgriTechUnit.Tests.Controllers
         //    Assert.IsType<RedirectToActionResult>(result);
         //}
 
+        //[Fact]
+        //public async Task Comment_ReturnsJson_WhenAjaxRequestAndCommentCreated()
+        //{
+        //    // Arrange
+        //    var postViewModel = new PostViewModel
+        //    {
+        //        Post = new Post { Id = 1 },
+        //        Comment = new Comment { Content = "Test Comment" }
+        //    };
+
+        //    var createdComment = new Comment
+        //    {
+        //        Content = "Test Comment",
+        //        Author = new ApplicationUser { FirstName = "John", LastName = "Doe" },
+        //        CreatedOn = DateTime.UtcNow,
+        //        Post = postViewModel.Post
+        //    };
+
+        //    _postBusinessManagerMock
+        //        .Setup(m => m.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
+        //        .ReturnsAsync(createdComment);
+
+        //    var httpContext = new DefaultHttpContext();
+        //    httpContext.Request.Headers["X-Requested-With"] = "XMLHttpRequest";
+        //    _controller.ControllerContext = new ControllerContext()
+        //    {
+        //        HttpContext = httpContext
+        //    };
+
+        //    // Act
+        //    var result = await _controller.Comment(postViewModel);
+
+        //    // Assert
+        //    var jsonResult = Assert.IsType<JsonResult>(result);
+
+        //    // Correct serialization -> deserialization step
+        //    var serialized = System.Text.Json.JsonSerializer.Serialize(jsonResult.Value);
+        //    var data = System.Text.Json.JsonSerializer.Deserialize<CommentResponse>(serialized);
+
+        //    // Now data is strongly typed!
+        //    Assert.True(data.Success);
+        //    Assert.Equal("John Doe", data.AuthorName);
+        //    Assert.Equal("Test Comment", data.Content);
+        //    Assert.False(string.IsNullOrEmpty(data.CreatedOn));
+        //}
+
+        //private class CommentResponse
+        //{
+        //    public bool Success { get; set; }
+        //    public string AuthorName { get; set; }
+        //    public string Content { get; set; }
+        //    public string CreatedOn { get; set; }
+        //}
+
+        [Fact]
+        public async Task Comment_ReturnsRedirect_WhenNormalRequestAndCommentCreated()
+        {
+            // Arrange
+            var postViewModel = new PostViewModel
+            {
+                Post = new Post { Id = 1 },
+                Comment = new Comment { Content = "Test Comment" }
+            };
+
+            var createdComment = new Comment
+            {
+                Content = "Test Comment",
+                Author = new ApplicationUser { FirstName = "John", LastName = "Doe" },
+                CreatedOn = DateTime.UtcNow,
+                Post = postViewModel.Post
+            };
+
+            _postBusinessManagerMock
+                .Setup(m => m.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
+                .ReturnsAsync(createdComment);
+
+            // No AJAX header set
+
+            // Act
+            var result = await _controller.Comment(postViewModel);
+
+            // Assert
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal(postViewModel.Post.Id, redirectResult.RouteValues["id"]);
+        }
+
+        [Fact]
+        public async Task Comment_ReturnsBadRequest_WhenAjaxRequestAndCommentIsNull()
+        {
+            // Arrange
+            var postViewModel = new PostViewModel
+            {
+                Post = new Post { Id = 1 },
+                Comment = new Comment { Content = "Test Comment" }
+            };
+
+            _postBusinessManagerMock
+                .Setup(m => m.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
+                .ReturnsAsync((Comment)null);
+
+            // Properly initialize HttpContext and Request
+            var httpContext = new DefaultHttpContext();
+            httpContext.Request.Headers["X-Requested-With"] = "XMLHttpRequest";
+            _controller.ControllerContext = new ControllerContext()
+            {
+                HttpContext = httpContext
+            };
+
+            // Act
+            var result = await _controller.Comment(postViewModel);
+
+            // Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+
+        [Fact]
+        public async Task Comment_ReturnsRedirect_WhenNormalRequestAndCommentIsNull()
+        {
+            // Arrange
+            var postViewModel = new PostViewModel
+            {
+                Post = new Post { Id = 1 },
+                Comment = new Comment { Content = "Test Comment" }
+            };
+
+            _postBusinessManagerMock
+                .Setup(m => m.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
+                .ReturnsAsync((Comment)null);
+
+            // No AJAX header
+
+            // Act
+            var result = await _controller.Comment(postViewModel);
+
+            // Assert
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal(postViewModel.Post.Id, redirectResult.RouteValues["Id"]);
+        }
+
         [Fact]
         public void ReactToPost_Adds_New_Reaction()
         {
@@ -210,7 +363,6 @@ namespace AgriTechUnit.Tests.Controllers
             // Assert
             Assert.Null(context.PostReactions.FirstOrDefault(r => r.PostId == postId && r.UserId == userId));
         }
-
 
         [Fact]
         public void ReactToPost_WhenUserChangesReaction_ShouldUpdateReaction()
@@ -404,6 +556,234 @@ namespace AgriTechUnit.Tests.Controllers
             Assert.False(updatedPost.Published); // should be toggled to false
         }
 
+        [Fact]
+        public async Task DeleteComment_ReturnsNotFound_WhenCommentDoesNotExist()
+        {
+            // Act
+            var result = await _controller.DeleteComment(999);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task DeleteComment_ReturnsForbid_WhenUserNotAuthorized()
+        {
+            // Arrange
+            var comment = new Comment { Id = 1, AuthorId = "author1", PostId = 10 };
+            _context.Comments.Add(comment);
+            _context.Posts.Add(new Post { Id = 10, Creator = new ApplicationUser { Id = "postOwner" } });
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("differentUser");
+
+            // Act
+            var result = await _controller.DeleteComment(1);
+
+            // Assert
+            Assert.IsType<ForbidResult>(result);
+        }
+
+        [Fact]
+        public async Task DeleteComment_DeletesCommentAndRedirects()
+        {
+            // Arrange
+            var comment = new Comment { Id = 2, AuthorId = "user1", PostId = 20 };
+            _context.Comments.Add(comment);
+            _context.Posts.Add(new Post { Id = 20, Creator = new ApplicationUser { Id = "user2" } });
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("user1");
+
+            // Act
+            var result = await _controller.DeleteComment(2);
+
+            // Assert
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal("Post", redirectResult.ControllerName);
+            Assert.Equal(20, redirectResult.RouteValues["id"]);
+
+            Assert.Null(await _context.Comments.FindAsync(2));
+        }
+
+        [Fact]
+        public async Task HideComment_ReturnsNotFound_WhenCommentDoesNotExist()
+        {
+            // Act
+            var result = await _controller.HideComment(999);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task HideComment_ReturnsForbid_WhenUserNotAuthorized()
+        {
+            // Arrange
+            var comment = new Comment { Id = 3, PostId = 30 };
+            _context.Comments.Add(comment);
+            _context.Posts.Add(new Post { Id = 30, Creator = new ApplicationUser { Id = "ownerId1" } });
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("differentUser");
+
+            // Act
+            var result = await _controller.HideComment(3);
+
+            // Assert
+            Assert.IsType<ForbidResult>(result);
+        }
+
+        [Fact]
+        public async Task HideComment_TogglesIsHidden_AndRedirects()
+        {
+            // Arrange
+            var comment = new Comment { Id = 4, PostId = 40 };
+            _context.Comments.Add(comment);
+            _context.Posts.Add(new Post { Id = 40, Creator = new ApplicationUser { Id = "ownerId" } });
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("ownerId");
+
+            // Act
+            var result = await _controller.HideComment(4);
+
+            // Assert
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.True(_context.Comments.Find(4).IsHidden);
+        }
+
+        [Fact]
+        public async Task ToggleHideComment_ReturnsNotFound_WhenCommentDoesNotExist()
+        {
+            // Act
+            var result = await _controller.ToggleHideComment(999);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        //[Fact]
+        //public async Task ToggleHideComment_TogglesAndReturnsJson()
+        //{
+        //    // Arrange
+        //    var comment = new Comment { Id = 5, PostId = 50 };
+        //    _context.Comments.Add(comment);
+        //    await _context.SaveChangesAsync();
+
+        //    // Act
+        //    var result = await _controller.ToggleHideComment(5);
+
+        //    // Assert
+        //    var jsonResult = Assert.IsType<JsonResult>(result);
+        //    var data = (dynamic)jsonResult.Value;
+        //    Assert.True((bool)data.success);
+        //    Assert.True((bool)data.isHidden);
+        //}
+
+        [Fact]
+        public async Task EditComment_Get_ReturnsNotFound_WhenCommentDoesNotExist()
+        {
+            // Act
+            var result = await _controller.EditComment(999);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task EditComment_Get_ReturnsForbid_WhenUserNotAuthor()
+        {
+            // Arrange
+            var comment = new Comment { Id = 6, AuthorId = "authorId" };
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("differentUser");
+
+            // Act
+            var result = await _controller.EditComment(6);
+
+            // Assert
+            Assert.IsType<ForbidResult>(result);
+        }
+
+        [Fact]
+        public async Task EditComment_Get_ReturnsView_WithCorrectModel()
+        {
+            // Arrange
+            var comment = new Comment { Id = 7, AuthorId = "authorId", Content = "Original Content" };
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("authorId");
+
+            // Act
+            var result = await _controller.EditComment(7);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsType<EditCommentViewModel>(viewResult.Model);
+            Assert.Equal(7, model.CommentId);
+            Assert.Equal("Original Content", model.Content);
+        }
+
+        [Fact]
+        public async Task EditComment_Post_ReturnsNotFound_WhenCommentDoesNotExist()
+        {
+            // Arrange
+            var model = new EditCommentViewModel { CommentId = 999, Content = "Updated Content" };
+
+            // Act
+            var result = await _controller.EditComment(model);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Fact]
+        public async Task EditComment_Post_ReturnsForbid_WhenUserNotAuthor()
+        {
+            // Arrange
+            var comment = new Comment { Id = 8, AuthorId = "authorId", Content = "Old Content" };
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("differentUser");
+
+            var model = new EditCommentViewModel { CommentId = 8, Content = "Updated Content" };
+
+            // Act
+            var result = await _controller.EditComment(model);
+
+            // Assert
+            Assert.IsType<ForbidResult>(result);
+        }
+
+        [Fact]
+        public async Task EditComment_Post_UpdatesContent_AndRedirects()
+        {
+            // Arrange
+            var comment = new Comment { Id = 9, AuthorId = "authorId", PostId = 90, Content = "Old Content" };
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            _userManagerMock.Setup(u => u.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns("authorId");
+
+            var model = new EditCommentViewModel { CommentId = 9, Content = "Updated Content" };
+
+            // Act
+            var result = await _controller.EditComment(model);
+
+            // Assert
+            var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal("Post", redirectResult.ControllerName);
+
+            var updatedComment = await _context.Comments.FindAsync(9);
+            Assert.Equal("Updated Content", updatedComment.Content);
+        }
 
     }
 }
