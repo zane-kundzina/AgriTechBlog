@@ -560,3 +560,4 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechUnit.Tests\obj\Debug\ne
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechUnit.Tests\obj\Debug\netcoreapp3.1\AgriTechUnit.Tests.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechUnit.Tests\obj\Debug\netcoreapp3.1\AgriTechUnit.Tests.pdb
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechUnit.Tests\obj\Debug\netcoreapp3.1\AgriTechUnit.Tests.genruntimeconfig.cache
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechUnit.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll

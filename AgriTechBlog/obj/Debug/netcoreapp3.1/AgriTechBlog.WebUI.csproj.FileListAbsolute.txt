@@ -519,3 +519,4 @@ C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcorea
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\AgriTechBlog.WebUI.dll
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\AgriTechBlog.WebUI.pdb
 C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\obj\Debug\netcoreapp3.1\AgriTechBlog.WebUI.genruntimeconfig.cache
+C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll

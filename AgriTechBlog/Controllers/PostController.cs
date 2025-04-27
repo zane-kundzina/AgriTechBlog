@@ -93,10 +93,15 @@ namespace AgriTechBlog.WebUI.Controllers
             if (existingReaction != null)
             {
                 if (existingReaction.IsLike == isLike)
+                {
                     _context.PostReactions.Remove(existingReaction); // unreact
+                }
                 else
+                {
                     existingReaction.IsLike = isLike; // change reaction
-                    _context.PostReactions.Update(existingReaction);            }
+                    _context.PostReactions.Update(existingReaction);
+                }
+            }
             else
             {
                 var reaction = new PostReaction
@@ -105,7 +110,7 @@ namespace AgriTechBlog.WebUI.Controllers
                     UserId = userId,
                     IsLike = isLike
                 };
-                
+
                 _context.PostReactions.Add(reaction);
             }
 

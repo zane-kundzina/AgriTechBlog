@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZfFaBrWvShc=",
+  "dgSpecHash": "kd3iW58YiBc=",
   "success": true,
   "projectFilePath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\AgriTechUnit.Tests.csproj",
   "expectedPackageFiles": [
@@ -73,6 +73,7 @@
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.32\\microsoft.entityframeworkcore.3.1.32.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.32\\microsoft.entityframeworkcore.abstractions.3.1.32.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.32\\microsoft.entityframeworkcore.analyzers.3.1.32.nupkg.sha512",
+    "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.32\\microsoft.entityframeworkcore.inmemory.3.1.32.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.32\\microsoft.entityframeworkcore.relational.3.1.32.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\3.1.32\\microsoft.entityframeworkcore.sqlite.3.1.32.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\3.1.32\\microsoft.entityframeworkcore.sqlite.core.3.1.32.nupkg.sha512",

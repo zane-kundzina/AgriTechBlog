@@ -29,5 +29,10 @@ namespace AgriTechBlog.Service
             await _applicationDbContext.SaveChangesAsync();
             return applicationUser;
         }
+
+        public IQueryable<ApplicationUser> GetAll()
+        {
+            return _applicationDbContext.Users;
+        }
     }
 }

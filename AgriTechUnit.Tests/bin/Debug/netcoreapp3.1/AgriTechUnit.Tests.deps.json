@@ -33,6 +33,7 @@
         "dependencies": {
           "AgriTechBlog.WebUI": "1.0.0",
           "Microsoft.AspNetCore.Authorization": "3.1.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "3.1.32",
           "Microsoft.NET.Test.Sdk": "17.3.2",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
@@ -1153,6 +1154,20 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/3.1.32": {},
+      "Microsoft.EntityFrameworkCore.InMemory/3.1.32": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.32"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "3.1.32.0",
+            "fileVersion": "3.100.3222.56605"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.1.32": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.32"
@@ -3805,6 +3820,7 @@
           "Microsoft.AspNetCore.Authorization": "3.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.32",
           "Microsoft.AspNetCore.Mvc": "2.3.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "3.1.32",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
           "X.PagedList": "8.1.0",
           "X.PagedList.Mvc.Core": "8.1.0"
@@ -3824,6 +3840,7 @@
           "AgriTechBlog.Data": "1.0.0",
           "Microsoft.AspNetCore.Authorization": "3.1.0",
           "Microsoft.AspNetCore.Mvc": "2.3.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "3.1.32",
           "X.PagedList": "8.1.0",
           "X.PagedList.Mvc.Core": "8.1.0"
         },
@@ -3849,6 +3866,7 @@
           "Microsoft.AspNetCore.Identity.UI": "3.1.32",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.32",
           "Microsoft.EntityFrameworkCore": "3.1.32",
+          "Microsoft.EntityFrameworkCore.InMemory": "3.1.32",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.32",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.32",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.32",
@@ -5847,6 +5865,13 @@
       "sha512": "sha512-yvQBsos0/oAqN9rjcTRAFflBRcgFd8JINb9m0Zl7y12ac5jswvD8ILNVDSu5UCAd1y84xehjRKcq2ptIceBeGg==",
       "path": "microsoft.entityframeworkcore.analyzers/3.1.32",
       "hashPath": "microsoft.entityframeworkcore.analyzers.3.1.32.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/3.1.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B6ZQDUTw2mR2t54btWiiND3vXkqdD/isHPrz9kEopEGYI5MyY+OKhxDlSJhfC9YIlOU3XUH7VYZJfCNCIyBu0w==",
+      "path": "microsoft.entityframeworkcore.inmemory/3.1.32",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.3.1.32.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/3.1.32": {
       "type": "package",
