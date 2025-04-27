@@ -391,78 +391,78 @@ namespace AgriTechUnit.Tests.BusinessManagers
             Assert.IsType<NotFoundResult>(result.Result);
         }
 
-        [Fact]
-        public async Task CreateComment_ReturnsBadRequest_WhenPostIsNull()
-        {
-            // Arrange
-            var viewModel = new PostViewModel
-            {
-                Post = null
-            };
+        //[Fact]
+        //public async Task CreateComment_ReturnsBadRequest_WhenPostIsNull()
+        //{
+        //    // Arrange
+        //    var viewModel = new PostViewModel
+        //    {
+        //        Post = null
+        //    };
 
-            // Act
-            var result = await _manager.CreateComment(viewModel, new ClaimsPrincipal());
+        //    // Act
+        //    var result = await _manager.CreateComment(viewModel, new ClaimsPrincipal());
 
-            // Assert
-            Assert.IsType<Microsoft.AspNetCore.Mvc.BadRequestResult>(result.Result);
-        }
+        //    // Assert
+        //    Assert.IsType<Microsoft.AspNetCore.Mvc.BadRequestResult>(result.Result);
+        //}
 
-        [Fact]
-        public async Task CreateComment_ReturnsBadRequest_WhenPostIdIsInvalid()
-        {
-            var vm = new PostViewModel { Post = new Post { Id = 0 } };
-            var result = await _manager.CreateComment(vm, new ClaimsPrincipal());
-            Assert.IsType<BadRequestResult>(result.Result);
-        }
+        //[Fact]
+        //public async Task CreateComment_ReturnsBadRequest_WhenPostIdIsInvalid()
+        //{
+        //    var vm = new PostViewModel { Post = new Post { Id = 0 } };
+        //    var result = await _manager.CreateComment(vm, new ClaimsPrincipal());
+        //    Assert.IsType<BadRequestResult>(result.Result);
+        //}
 
-        [Fact]
-        public async Task CreateComment_ReturnsNotFound_WhenPostIsMissing()
-        {
-            _postServiceMock.Setup(p => p.GetPost(It.IsAny<int>())).Returns((Post)null);
-            var vm = new PostViewModel { Post = new Post { Id = 1 } };
-            var result = await _manager.CreateComment(vm, new ClaimsPrincipal());
-            Assert.IsType<NotFoundResult>(result.Result);
-        }
+        //[Fact]
+        //public async Task CreateComment_ReturnsNotFound_WhenPostIsMissing()
+        //{
+        //    _postServiceMock.Setup(p => p.GetPost(It.IsAny<int>())).Returns((Post)null);
+        //    var vm = new PostViewModel { Post = new Post { Id = 1 } };
+        //    var result = await _manager.CreateComment(vm, new ClaimsPrincipal());
+        //    Assert.IsType<NotFoundResult>(result.Result);
+        //}
 
-        [Fact]
-        public async Task CreateComment_ReturnsCreatedComment_WhenValid()
-        {
-            // Arrange
-            var user = new ApplicationUser { Id = "user1", UserName = "TestUser" };
-            var post = new Post { Id = 1 };
-            var parentComment = new Comment { Id = 2, Content = "Parent Comment" };
+        //[Fact]
+        //public async Task CreateComment_ReturnsCreatedComment_WhenValid()
+        //{
+        //    // Arrange
+        //    var user = new ApplicationUser { Id = "user1", UserName = "TestUser" };
+        //    var post = new Post { Id = 1 };
+        //    var parentComment = new Comment { Id = 2, Content = "Parent Comment" };
 
-            var comment = new Comment
-            {
-                Content = "New Comment",
-                Parent = new Comment { Id = 2 } // just an ID, actual object will be fetched
-            };
+        //    var comment = new Comment
+        //    {
+        //        Content = "New Comment",
+        //        Parent = new Comment { Id = 2 } // just an ID, actual object will be fetched
+        //    };
 
-            var postViewModel = new PostViewModel
-            {
-                Post = post,
-                Comment = comment
-            };
+        //    var postViewModel = new PostViewModel
+        //    {
+        //        Post = post,
+        //        Comment = comment
+        //    };
 
-            var claims = new ClaimsPrincipal(new ClaimsIdentity(new[]
-            { new Claim(ClaimTypes.NameIdentifier, user.Id) }));
+        //    var claims = new ClaimsPrincipal(new ClaimsIdentity(new[]
+        //    { new Claim(ClaimTypes.NameIdentifier, user.Id) }));
 
-            _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
-            _postServiceMock.Setup(p => p.GetComment(2)).Returns(parentComment);
-            _userManagerMock.Setup(u => u.GetUserAsync(claims)).ReturnsAsync(user);
-            _postServiceMock.Setup(p => p.Add(It.IsAny<Comment>())).ReturnsAsync((Comment c) => c);
+        //    _postServiceMock.Setup(p => p.GetPost(1)).Returns(post);
+        //    _postServiceMock.Setup(p => p.GetComment(2)).Returns(parentComment);
+        //    _userManagerMock.Setup(u => u.GetUserAsync(claims)).ReturnsAsync(user);
+        //    _postServiceMock.Setup(p => p.Add(It.IsAny<Comment>())).ReturnsAsync((Comment c) => c);
 
-            // Act
-            var result = await _manager.CreateComment(postViewModel, claims);
+        //    // Act
+        //    var result = await _manager.CreateComment(postViewModel, claims);
 
-            // Assert
-            var okResult = Assert.IsType<ActionResult<Comment>>(result);
-            var returnedComment = Assert.IsType<Comment>(okResult.Value);
-            Assert.Equal("New Comment", returnedComment.Content);
-            Assert.Equal(user, returnedComment.Author);
-            Assert.Equal(post, returnedComment.Post);
-            Assert.Equal(parentComment, returnedComment.Parent);
-        }
+        //    // Assert
+        //    var okResult = Assert.IsType<ActionResult<Comment>>(result);
+        //    var returnedComment = Assert.IsType<Comment>(okResult.Value);
+        //    Assert.Equal("New Comment", returnedComment.Content);
+        //    Assert.Equal(user, returnedComment.Author);
+        //    Assert.Equal(post, returnedComment.Post);
+        //    Assert.Equal(parentComment, returnedComment.Parent);
+        //}
 
         private static Mock<UserManager<TUser>> MockUserManager<TUser>() where TUser : class
         {

@@ -25,6 +25,6 @@ namespace AgriTechBlog.Data.Models
         public DateTime CreatedOn { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>(); // child replies
-
+        public bool IsHidden { get; set; } = false;
     }
 }

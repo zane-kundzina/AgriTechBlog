@@ -46,90 +46,360 @@
         <div class="row mt-5">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <h4 class="mb-5">@Model.Post.Comments.Count() Comments</h4>
-                <ul class="comment-list  comment-top" list="@Model.Post.Comments" count="0">
-                    @foreach (var comment in Model.Post.Comments.Where(comment => comment.Parent is null))
+
+                <ul class="comment-list comment-top" id="commentsContainer" list="@Model.Post.Comments" count="0">
+                    @foreach (var comment in Model.Post.Comments.Where(c => c.Parent == null))
                     {
+                        var currentUserId = User.Identity.IsAuthenticated ? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value : null;
+                        var postAuthorId = Model.Post.Creator.Id;
+                        var commentAuthorId = comment.Author.Id;
+
                         <li class="comment" style="margin-top: 30px;">
                             <div class="comment-body">
                                 <h4 class="commenter-name">@comment.Author.FirstName @comment.Author.LastName</h4>
                                 <div class="comment-date">@comment.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")</div>
-                                <p class="comment-message">@comment.Content</p>
-                                @if (!User.Identity.IsAuthenticated)
+
+                                @if (comment.IsHidden)
                                 {
-                                    <a class="reply-btn btn" asp-area="Identity" asp-page="/Account/Login" asp-route-ReturnUrl="~/Post/@Model.Post.Id">Login to reply</a>
+                                    <p class="comment-message text-muted"><em>This comment is hidden by the Post Author.</em></p>
                                 }
                                 else
                                 {
-                                    <a aria-expanded="false" href="@($"#replyComment{comment.Id}")" data-toggle="collapse" class="reply-btn btn">Reply</a>
+                                    <p class="comment-message">@comment.Content</p>
+                                }
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="comment-actions">
+                                        @if (currentUserId == commentAuthorId)
+                                        {
+                                            <!-- Comment Author -->
+                                            <a href="javascript:void(0);" class="label-button" data-toggle="modal" data-target="#editCommentModal@(comment.Id)">Edit</a>
+
+                                            <form asp-action="DeleteComment" asp-route-commentId="@comment.Id" method="post" class="d-inline">
+                                                <button type="submit" class="label-button">Delete</button>
+                                            </form>
+                                        }
+                                        else if (currentUserId == postAuthorId)
+                                        {
+                                            <!-- Post Author -->
+                                            <a href="javascript:void(0);" class="label-button toggle-hide-btn" data-comment-id="@comment.Id" data-is-hidden="@comment.IsHidden">
+                                                @(comment.IsHidden ? "Unhide" : "Hide")
+                                            </a>
+
+                                            <form asp-action="DeleteComment" asp-route-commentId="@comment.Id" method="post" class="d-inline">
+                                                <button type="submit" class="label-button">Delete</button>
+                                            </form>
+                                        }
+
+                                        <!-- Everyone authenticated can reply -->
+                                        <a aria-expanded="false" href="#replyComment@(comment.Id)" data-toggle="collapse" class="label-button">Reply</a>
+                                    </div>
+
+
                                 }
                             </div>
+
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <div class="collapse" id="@($"replyComment{comment.Id}")">
-                                    <form asp-controller="Post" asp-action="Comment">
+                                <div class="collapse" id="replyComment@(comment.Id)">
+                                    <form asp-controller="Post" asp-action="Comment" method="post">
                                         <input asp-for="Post.Id" readonly hidden />
                                         <input asp-for="Comment.Parent.Id" value="@comment.Id" readonly hidden />
                                         <div class="form-group">
-                                            <label for="comment">Write a reply</label>
-                                            <textarea asp-for="Comment.Content" class="form-control" rows="3"></textarea>
-                                            <button type="submit" class="btn btn-outline-primary post-btn">Post</button>
+                                            <label for="Comment.Content">Write a reply</label>
+                                            <textarea asp-for="Comment.Content" class="form-control" rows="3" required></textarea>
+                                            <button type="submit" class="btn btn-outline-primary post-btn mt-2">Post</button>
                                         </div>
                                     </form>
                                 </div>
                             }
-                            <ul class="comment-list" list="@comment.Comments" count="0" style="margin-left: 30px; margin-top:0;">
+
+                            <!-- Replies -->
+                            <ul class="comment-list" list="@comment.Comments" count="0" style="margin-left: 30px; margin-top: 0;">
                                 @foreach (var reply in comment.Comments)
                                 {
                                     <li class="comment">
                                         <div class="comment-body">
-                                            <h3 class="commenter-name">@reply.Author.FirstName @reply.Author.LastName</h3>
+                                            <h5 class="commenter-name">@reply.Author.FirstName @reply.Author.LastName</h5>
                                             <div class="comment-date">@reply.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")</div>
                                             <p class="comment-message">@reply.Content</p>
                                         </div>
                                     </li>
                                 }
                             </ul>
+
+                            <hr />
+
+                            <!-- Edit Comment Modal -->
+                            <div class="modal fade" id="editCommentModal@(comment.Id)" tabindex="-1" role="dialog" aria-labelledby="editCommentModalLabel@(comment.Id)" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <form asp-action="EditComment" method="post">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editCommentModalLabel@(comment.Id)">Edit Comment</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="hidden" name="CommentId" value="@comment.Id" />
+                                                <div class="form-group">
+                                                    <label for="Content">Content</label>
+                                                    <textarea name="Content" class="form-control" rows="4" required>@comment.Content</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
-                        <hr />
                     }
                 </ul>
 
+                <!-- New Comment Section -->
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <div>
-                        <form asp-controller="Post" asp-action="Comment">
-                            <input asp-for="Post.Id" readonly hidden />
+                    <div class="mt-5">
+                        <form id="newCommentForm" asp-controller="Post" asp-action="Comment" method="post">
+                            <input type="hidden" name="Post.Id" value="@Model.Post.Id" />
+                            <input type="hidden" name="Comment.Parent.Id" value="" /> <!-- for root comments -->
                             <div class="form-group">
-                                <label for="comment">Comment</label>
-                                <textarea asp-for="Comment.Content" class="form-control" rows="3" required></textarea>
-                                <button type="submit" class="btn btn-outline-primary post-btn">Post</button>
+                                <label for="Comment.Content">Comment</label>
+                                <textarea name="Comment.Content" class="form-control" rows="3" required></textarea>
+                                <button type="submit" class="btn btn-outline-primary post-btn mt-2">Post</button>
                             </div>
                         </form>
-                    </div>                    
+                    </div>
                 }
                 else
                 {
-                    <a class="reply-btn btn" asp-area="Identity" asp-page="/Account/Login" asp-route-ReturnUrl="~/Post/@Model.Post.Id">Login to Comment on this Post</a>
+                    <a class="reply-btn btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login" asp-route-ReturnUrl="~/Post/@Model.Post.Id">
+                        Login to Comment on this Post
+                    </a>
                 }
             </div>
         </div>
+
     </div>
 </article>
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        $('[data-toggle="collapse"]').on('click', function () {
-            var $this = $(this),
-                $parent = typeof $this.data('parent') !== 'undefined' ? $($this.data('parent')) : undefined;
-            if ($parent === undefined) { /* Just toggle my  */
-                $this.find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
-                return true;
-            }
+        $(document).ready(function () {
+            $('[data-toggle="collapse"]').on('click', function () {
+                var $this = $(this),
+                    $parent = typeof $this.data('parent') !== 'undefined' ? $($this.data('parent')) : undefined;
+                if ($parent === undefined) {
+                    $this.find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+                    return true;
+                }
 
-            /* Open element will be close if parent !== undefined */
-            var currentIcon = $this.find('.glyphicon');
-            currentIcon.toggleClass('glyphicon-plus glyphicon-minus');
-            $parent.find('.glyphicon').not(currentIcon).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-
+                var currentIcon = $this.find('.glyphicon');
+                currentIcon.toggleClass('glyphicon-plus glyphicon-minus');
+                $parent.find('.glyphicon').not(currentIcon).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+            });
         });
     </script>
+    <!--Hide/Unhide buttons - NOT Reload the page-->
+    <script>
+        $(document).ready(function () {
+            $('.toggle-hide-btn').click(function () {
+                var button = $(this);
+                var commentId = button.data('comment-id');
+
+                $.ajax({
+                    url: '/Post/ToggleHideComment',
+                    method: 'POST',
+                    data: { commentId: commentId },
+                    success: function (response) {
+                        if (response.success) {
+                            if (response.isHidden) {
+                                // Comment is now hidden
+                                button.removeClass('btn-outline-warning').addClass('btn-outline-success');
+                                button.text('Unhide');
+
+                                // Update the comment text
+                                button.closest('.comment-body').find('.comment-message')
+                                    .html('<em class="text-muted">This comment is hidden by the Post Author.</em>');
+                            } else {
+                                // Comment is now visible
+                                button.removeClass('btn-outline-success').addClass('btn-outline-warning');
+                                button.text('Hide');
+
+                                // Restore the original comment text
+                                var originalContent = button.closest('.comment-body').data('original-content');
+                                button.closest('.comment-body').find('.comment-message')
+                                    .html(originalContent);
+                            }
+
+                            // Update the button's data-is-hidden value
+                            button.data('is-hidden', response.isHidden);
+                        }
+                    },
+                    error: function () {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
+            });
+
+            // Save the original content for each comment
+            $('.comment-body').each(function () {
+                var message = $(this).find('.comment-message').html();
+                $(this).data('original-content', message);
+            });
+        });
+    </script>
+
+    <!--Comment > Post does not Reload the page-->
+    <script>
+        $(document).ready(function () {
+            $('#newCommentForm').submit(function (event) {
+                event.preventDefault();
+
+                var form = $(this);
+                var url = '/Post/Comment'; // Controller URL
+                var formData = form.serialize();
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            var newCommentHtml = `
+                                <li class="comment" style="margin-top: 30px;">
+                                    <div class="comment-body">
+                                        <h4 class="commenter-name">${response.authorName}</h4>
+                                        <div class="comment-date">${response.createdOn}</div>
+                                        <p class="comment-message">${response.content}</p>
+
+                                        <div class="comment-actions">
+                                            <button class="btn btn-sm btn-link edit-comment">Edit</button>
+                                            <button class="btn btn-sm btn-link delete-comment">Delete</button>
+                                            <button class="btn btn-sm btn-link reply-comment">Reply</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            `;
+
+                            $('#commentsContainer').append(newCommentHtml);
+
+                            // Clear textarea
+                            form.find('textarea[name="Comment.Content"]').val('');
+                        } else {
+                            console.error('Failed to post comment.');
+                        }
+                    },
+                    error: function () {
+                        console.error('Failed to post comment.');
+                    }
+                });
+            });
+
+            // Delegated event handlers
+            $(document).on('click', '.edit-comment', function () {
+                const commentBody = $(this).closest('.comment-body');
+                const commentMessage = commentBody.find('.comment-message');
+                const authorName = commentBody.find('.commenter-name').text();
+                const createdOn = commentBody.find('.comment-date').text();
+
+                const currentText = commentMessage.text();
+
+                // Replace whole comment body for better editing
+                const editBox = `
+                    <textarea class="form-control edit-comment-box" rows="3">${currentText}</textarea>
+                    <button class="btn btn-sm btn-primary save-edit">Save</button>
+                    <button class="btn btn-sm btn-secondary cancel-edit">Cancel</button>
+                `;
+
+                commentBody.html(editBox);
+                commentBody.data('authorName', authorName);
+                commentBody.data('createdOn', createdOn);
+            });
+
+            $(document).on('click', '.save-edit', function () {
+                const commentBody = $(this).closest('.comment-body');
+                const newContent = commentBody.find('.edit-comment-box').val();
+                const authorName = commentBody.data('authorName');
+                const createdOn = commentBody.data('createdOn');
+
+                const updatedCommentHtml = `
+                    <h4 class="commenter-name">${authorName}</h4>
+                    <div class="comment-date">${createdOn}</div>
+                    <p class="comment-message">${newContent}</p>
+
+                    <div class="comment-actions">
+                        <button class="btn btn-sm btn-link edit-comment">Edit</button>
+                        <button class="btn btn-sm btn-link delete-comment">Delete</button>
+                        <button class="btn btn-sm btn-link reply-comment">Reply</button>
+                    </div>
+                `;
+
+                commentBody.html(updatedCommentHtml);
+            });
+
+            $(document).on('click', '.cancel-edit', function () {
+                const commentBody = $(this).closest('.comment-body');
+                const authorName = commentBody.data('authorName');
+                const createdOn = commentBody.data('createdOn');
+                const originalContent = commentBody.find('.edit-comment-box').val();
+
+                const cancelEditHtml = `
+                    <h4 class="commenter-name">${authorName}</h4>
+                    <div class="comment-date">${createdOn}</div>
+                    <p class="comment-message">${originalContent}</p>
+
+                    <div class="comment-actions">
+                        <button class="btn btn-sm btn-link edit-comment">Edit</button>
+                        <button class="btn btn-sm btn-link delete-comment">Delete</button>
+                        <button class="btn btn-sm btn-link reply-comment">Reply</button>
+                    </div>
+                `;
+
+                commentBody.html(cancelEditHtml);
+            });
+
+            $(document).on('click', '.delete-comment', function () {
+                if (confirm('Are you sure you want to delete this comment?')) {
+                    $(this).closest('li.comment').remove();
+                    // Optionally send AJAX to delete on server too
+                }
+            });
+
+            $(document).on('click', '.reply-comment', function () {
+                const commentBody = $(this).closest('.comment-body');
+                const replyForm = `
+                    <div class="reply-form mt-2">
+                        <textarea class="form-control reply-box" rows="2" placeholder="Write a reply..."></textarea>
+                        <button class="btn btn-sm btn-success post-reply mt-1">Post Reply</button>
+                    </div>`;
+
+                if (commentBody.find('.reply-form').length === 0) {
+                    commentBody.append(replyForm);
+                }
+            });
+
+            $(document).on('click', '.post-reply', function () {
+                const replyText = $(this).siblings('.reply-box').val();
+                if (replyText.trim() !== '') {
+                    const replyHtml = `
+                        <div class="reply" style="margin-left: 20px; margin-top: 10px;">
+                            <p>${replyText}</p>
+                        </div>`;
+
+                    $(this).closest('.comment-body').append(replyHtml);
+                    $(this).closest('.reply-form').remove();
+                }
+            });
+        });
+    </script>
+
+}
 }

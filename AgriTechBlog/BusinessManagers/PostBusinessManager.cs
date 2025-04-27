@@ -117,17 +117,18 @@ namespace AgriTechBlog.WebUI.BusinessManagers
             return post;            
         }
 
-        public async Task<ActionResult<Comment>> CreateComment(PostViewModel postViewModel, ClaimsPrincipal claimsPrincipal)
+        public async Task<Comment> CreateComment(PostViewModel postViewModel, ClaimsPrincipal claimsPrincipal)
         {
-            if (postViewModel.Post is null || postViewModel.Post.Id == 0)
-                return new BadRequestResult();
+            if (postViewModel.Post == null || postViewModel.Post.Id == 0)
+                return null;
 
             var post = _postService.GetPost(postViewModel.Post.Id);
-
-            if (post is null)
-                return new NotFoundResult();
+            if (post == null)
+                return null;
 
             var comment = postViewModel.Comment;
+            if (comment == null)
+                return null;
 
             comment.Author = await _userManager.GetUserAsync(claimsPrincipal);
             comment.Post = post;
@@ -138,8 +139,10 @@ namespace AgriTechBlog.WebUI.BusinessManagers
                 comment.Parent = _postService.GetComment(comment.Parent.Id);
             }
 
-            return await _postService.Add(comment);
+            await _postService.Add(comment); // Save to DB
+            return comment; // Return the real Comment object
         }
+
 
         public async Task<ActionResult<EditViewModel>> UpdatePost(EditViewModel editViewModel, ClaimsPrincipal claimsPrincipal)
         {

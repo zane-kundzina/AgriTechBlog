@@ -2,6 +2,7 @@
 using AgriTechBlog.Data.Models;
 using AgriTechBlog.WebUI.BusinessManagers;
 using AgriTechBlog.WebUI.BusinessManagers.Interfaces;
+using AgriTechBlog.WebUI.Models.CommentViewModels;
 using AgriTechBlog.WebUI.Models.PostViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -74,13 +75,33 @@ namespace AgriTechBlog.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment(PostViewModel postViewModel)
         {
-            var actionResult = await _postBusinessManager.CreateComment(postViewModel, User);
+            var comment = await _postBusinessManager.CreateComment(postViewModel, User);
 
-            if (actionResult.Result is null)
+            if (comment == null)
+            {
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return BadRequest();
+
                 return RedirectToAction("Index", new { postViewModel.Post.Id });
+            }
 
-            return actionResult.Result;
+            // If it's an AJAX request, return JSON
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new
+                {
+                    success = true,
+                    authorName = $"{comment.Author.FirstName} {comment.Author.LastName}",
+                    content = comment.Content,
+                    createdOn = comment.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")
+                });
+            }
+
+            // Otherwise (normal classic submit)
+            return RedirectToAction("Index", new { id = comment.Post.Id });
         }
+
+
 
         [HttpPost]
         public IActionResult ReactToPost(int postId, bool isLike)
@@ -166,5 +187,150 @@ namespace AgriTechBlog.WebUI.Controllers
 
             return RedirectToAction("Index", "Admin");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteComment(int commentId)
+        {
+            var comment = await _context.Comments
+                .Include(c => c.Comments) // include replies
+                .FirstOrDefaultAsync(c => c.Id == commentId);
+
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            var postAuthorId = await _context.Posts
+                .Where(p => p.Id == comment.PostId)
+                .Select(p => p.Creator.Id)
+                .FirstOrDefaultAsync();
+
+            if (comment.AuthorId != currentUserId && postAuthorId != currentUserId)
+            {
+                return Forbid(); // Not authorized
+            }
+
+            // First delete all replies
+            if (comment.Comments != null && comment.Comments.Any())
+            {
+                _context.Comments.RemoveRange(comment.Comments);
+            }
+
+            // Then delete the parent comment
+            _context.Comments.Remove(comment);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Post", new { id = comment.PostId });
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> HideComment(int commentId)
+        {
+            var comment = await _context.Comments.FindAsync(commentId);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            var postAuthorId = _context.Posts
+                .Where(p => p.Id == comment.PostId)
+                .Select(p => p.Creator.Id)
+                .FirstOrDefault();
+
+            if (postAuthorId != currentUserId)
+            {
+                return Forbid();
+            }            
+
+            // Toggle Hide/Unhide
+            comment.IsHidden = !comment.IsHidden;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Post", new { id = comment.PostId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ToggleHideComment(int commentId)
+        {
+            var comment = await _context.Comments.FindAsync(commentId);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            comment.IsHidden = !comment.IsHidden;
+            await _context.SaveChangesAsync();
+
+            return Json(new
+            {
+                success = true,
+                isHidden = comment.IsHidden
+            });
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> EditComment(int commentId)
+        {
+            var comment = await _context.Comments.FindAsync(commentId);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            if (comment.AuthorId != currentUserId)
+            {
+                return Forbid();
+            }
+
+            var model = new EditCommentViewModel
+            {
+                CommentId = comment.Id,
+                Content = comment.Content
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditComment(EditCommentViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var comment = await _context.Comments.FindAsync(model.CommentId);
+                if (comment == null)
+                {
+                    return NotFound();
+                }
+
+                return RedirectToAction("Index", "Post", new { id = comment.PostId });
+            }
+
+            var existingComment = await _context.Comments.FindAsync(model.CommentId);
+            if (existingComment == null)
+            {
+                return NotFound();
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            if (existingComment.AuthorId != currentUserId)
+            {
+                return Forbid();
+            }
+
+            existingComment.Content = model.Content;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Post", new { id = existingComment.PostId });
+        }
+
+
+
     }
 }

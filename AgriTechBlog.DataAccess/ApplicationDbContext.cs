@@ -7,11 +7,11 @@ namespace AgriTechBlog.Data
 {
     [ExcludeFromCodeCoverage]
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser> 
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options) {}
-        
+            : base(options) { }
+
         public DbSet<Post> Posts { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
@@ -34,7 +34,7 @@ namespace AgriTechBlog.Data
                 .HasMany(p => p.Reactions)
                 .WithOne(r => r.Post)
                 .HasForeignKey(r => r.PostId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade);            
         }
     }
 }

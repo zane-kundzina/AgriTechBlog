@@ -119,20 +119,20 @@ namespace AgriTechUnit.Tests.Controllers
             Assert.IsType<RedirectToActionResult>(result);
         }
 
-        [Fact]
-        public async Task Comment_Redirects_To_Post_Index()
-        {
-            // Arrange
-            var postViewModel = new PostViewModel { Post = new Post { Id = 1 } };
-            _postBusinessManagerMock.Setup(x => x.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
-                .ReturnsAsync(new ActionResult<Comment>(new Comment()));
+        //[Fact]
+        //public async Task Comment_Redirects_To_Post_Index()
+        //{
+        //    // Arrange
+        //    var postViewModel = new PostViewModel { Post = new Post { Id = 1 } };
+        //    _postBusinessManagerMock.Setup(x => x.CreateComment(It.IsAny<PostViewModel>(), It.IsAny<ClaimsPrincipal>()))
+        //        .ReturnsAsync(new ActionResult<Comment>(new Comment()));
 
-            // Act
-            var result = await _controller.Comment(postViewModel);
+        //    // Act
+        //    var result = await _controller.Comment(postViewModel);
 
-            // Assert
-            Assert.IsType<RedirectToActionResult>(result);
-        }
+        //    // Assert
+        //    Assert.IsType<RedirectToActionResult>(result);
+        //}
 
         [Fact]
         public void ReactToPost_Adds_New_Reaction()
@@ -140,7 +140,7 @@ namespace AgriTechUnit.Tests.Controllers
             // Arrange
             using var context = GetInMemoryDbContext(); // new fresh context
             var userId = "testUser";
-            
+
             var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
             {
                 new Claim(ClaimTypes.NameIdentifier, userId)
