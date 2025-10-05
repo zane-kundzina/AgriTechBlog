@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = AgriTechBlog.Data
-build_property.ProjectDir = C:\Users\zane.kundzina\source\repos\AgriTechBlog\AgriTechBlog.DataAccess\
+build_property.ProjectDir = C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechBlog.DataAccess\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.246084232509572" branch-rate="0.068359375" lines-covered="1414" lines-valid="5746" branches-covered="105" branches-valid="1536" complexity="2301" version="0" timestamp="1745786721">
+<coverage line-rate="0.246084232509572" branch-rate="0.068359375" lines-covered="1414" lines-valid="5746" branches-covered="105" branches-valid="1536" complexity="2301" version="0" timestamp="1746013949">
   <sources />
   <packages>
     <package name="AgriTechBlog.Service" line-rate="1" branch-rate="1" complexity="12">

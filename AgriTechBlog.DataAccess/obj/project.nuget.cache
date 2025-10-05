@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hjgfLkM0xFc=",
+  "dgSpecHash": "mKj4aPjR4jU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
+  "projectFilePath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\jetbrains.annotations\\2021.1.0\\jetbrains.annotations.2021.1.0.nupkg.sha512",

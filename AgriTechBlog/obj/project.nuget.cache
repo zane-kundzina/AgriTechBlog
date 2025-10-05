@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rGqsxU/DxyY=",
+  "dgSpecHash": "CAV7hMH1nwg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zane.kundzina\\source\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\zane.kundzina\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
