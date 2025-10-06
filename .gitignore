@@ -1,1 +1,11 @@
 .vs/ 
+
+# Build folders
+**/obj/
+**/bin/
+
+# VS files
+*.user
+*.suo
+*.cache
+
