@@ -28,3 +28,18 @@ C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechBlog.Serv
 C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTech.C37D78F1.Up2Date
 C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
 C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.deps.json
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Data.dll
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\bin\Debug\netcoreapp3.1\AgriTechBlog.Data.pdb
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.csproj.AssemblyReference.cache
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.AssemblyInfoInputs.cache
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.AssemblyInfo.cs
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.csproj.CoreCompileInputs.cache
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.sourcelink.json
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTech.C37D78F1.Up2Date
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.dll
+C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechBlog.Service\obj\Debug\netcoreapp3.1\AgriTechBlog.Service.pdb

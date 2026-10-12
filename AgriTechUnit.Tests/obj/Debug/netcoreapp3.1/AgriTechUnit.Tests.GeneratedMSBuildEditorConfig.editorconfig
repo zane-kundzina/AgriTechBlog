@@ -1,6 +1,6 @@
 is_global = true
 build_property.RootNamespace = AgriTechUnit.Tests
-build_property.ProjectDir = C:\Users\zane.kundzina\OneDrive - Accenture\repos\AgriTechBlog\AgriTechUnit.Tests\
+build_property.ProjectDir = C:\Users\Zane PC\source\repos\AgriTechBlog\AgriTechUnit.Tests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

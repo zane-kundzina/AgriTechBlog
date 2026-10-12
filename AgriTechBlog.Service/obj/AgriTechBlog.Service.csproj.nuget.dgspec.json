@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj": {}
+    "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj": {
+    "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
         "projectName": "AgriTechBlog.Data",
-        "projectPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
-        "packagesPath": "C:\\Users\\zane.kundzina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj",
+        "packagesPath": "C:\\Users\\Zane PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\zane.kundzina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zane PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "framework": "netcoreapp3.1",
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
@@ -44,10 +45,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "framework": "netcoreapp3.1",
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authorization": {
@@ -101,24 +103,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj": {
+    "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj",
         "projectName": "AgriTechBlog.Service",
-        "projectPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj",
-        "packagesPath": "C:\\Users\\zane.kundzina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.Service\\obj\\",
+        "projectPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\AgriTechBlog.Service.csproj",
+        "packagesPath": "C:\\Users\\Zane PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\zane.kundzina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zane PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -131,10 +133,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "framework": "netcoreapp3.1",
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj": {
-                "projectPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj"
+              "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj": {
+                "projectPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog.DataAccess\\AgriTechBlog.Data.csproj"
               }
             }
           }
@@ -149,10 +152,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "framework": "netcoreapp3.1",
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authorization": {
@@ -198,7 +202,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "netcoreapp3.1": {
       "Castle.Core/5.1.1": {
         "type": "package",
         "dependencies": {
@@ -13743,7 +13743,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "netcoreapp3.1": [
       "AgriTechBlog.WebUI >= 1.0.0",
       "Microsoft.AspNetCore.Authorization >= 3.1.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 3.1.32",
@@ -13754,23 +13754,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zane.kundzina\\.nuget\\packages\\": {},
+    "C:\\Users\\Zane PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\AgriTechUnit.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\AgriTechUnit.Tests.csproj",
       "projectName": "AgriTechUnit.Tests",
-      "projectPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\AgriTechUnit.Tests.csproj",
-      "packagesPath": "C:\\Users\\zane.kundzina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\AgriTechUnit.Tests.csproj",
+      "packagesPath": "C:\\Users\\Zane PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechUnit.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\zane.kundzina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zane PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -13783,10 +13783,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "framework": "netcoreapp3.1",
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj": {
-              "projectPath": "C:\\Users\\zane.kundzina\\OneDrive - Accenture\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj"
+            "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj": {
+              "projectPath": "C:\\Users\\Zane PC\\source\\repos\\AgriTechBlog\\AgriTechBlog\\AgriTechBlog.WebUI.csproj"
             }
           }
         }
@@ -13801,10 +13802,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.400"
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "framework": "netcoreapp3.1",
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authorization": {
@@ -13852,7 +13854,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

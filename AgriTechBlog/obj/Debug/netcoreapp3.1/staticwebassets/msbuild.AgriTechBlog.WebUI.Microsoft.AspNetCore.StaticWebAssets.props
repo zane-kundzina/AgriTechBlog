@@ -4,7 +4,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assetsAdmin\demo\chart-area-demo.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -20,7 +20,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assetsAdmin\demo\chart-bar-demo.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -36,7 +36,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assetsAdmin\demo\chart-pie-demo.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -52,7 +52,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assetsAdmin\demo\datatables-demo.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -68,7 +68,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assetsAdmin\img\error-404-monochrome.svg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -84,7 +84,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\favicon.ico</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -100,7 +100,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\img\about-bg.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -116,7 +116,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\img\contact-bg.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -132,7 +132,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\img\home-bg.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -148,7 +148,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\img\post-bg.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -164,7 +164,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>assets\img\post-sample-image.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -180,7 +180,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>css\site.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -196,7 +196,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>css\styles.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -212,7 +212,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>css\stylesAdmin.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -228,7 +228,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>favicon.ico</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -244,7 +244,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>img\home-bg.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -260,7 +260,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>js\datatables-simple-demo.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -276,7 +276,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>js\scripts.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -292,7 +292,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>js\scriptsAdmin.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -308,7 +308,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>js\site.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -324,7 +324,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -340,7 +340,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -356,7 +356,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -372,7 +372,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-grid.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -388,7 +388,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -404,7 +404,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -420,7 +420,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -436,7 +436,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap-reboot.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -452,7 +452,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -468,7 +468,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -484,7 +484,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.min.css</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -500,7 +500,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\css\bootstrap.min.css.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -516,7 +516,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -532,7 +532,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -548,7 +548,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -564,7 +564,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.bundle.min.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -580,7 +580,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -596,7 +596,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -612,7 +612,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -628,7 +628,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\dist\js\bootstrap.min.js.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -644,7 +644,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\bootstrap\LICENSE</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -660,7 +660,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -676,7 +676,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -692,7 +692,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation-unobtrusive\LICENSE.txt</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -708,7 +708,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\additional-methods.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -724,7 +724,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\additional-methods.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -740,7 +740,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\jquery.validate.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -756,7 +756,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\dist\jquery.validate.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -772,7 +772,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery-validation\LICENSE.md</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -788,7 +788,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -804,7 +804,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.min.js</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -820,7 +820,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\dist\jquery.min.map</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -836,7 +836,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>lib\jquery\LICENSE.txt</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -852,7 +852,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\10\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -868,7 +868,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\11\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -884,7 +884,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\12\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -900,7 +900,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\13\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -916,7 +916,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\14\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -932,7 +932,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\15\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -948,7 +948,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\16\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -964,7 +964,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\17\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -980,7 +980,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\18\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -996,7 +996,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\19\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1012,7 +1012,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\1\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1028,7 +1028,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\2\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1044,7 +1044,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\3\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1060,7 +1060,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\4\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1076,7 +1076,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\5\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1092,7 +1092,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\6\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1108,7 +1108,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\7\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1124,7 +1124,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\8\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1140,7 +1140,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Posts\9\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1156,7 +1156,7 @@
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Users\5dc79e32-8ade-4034-bdf3-695e11a2ede6\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1168,11 +1168,27 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\5dc79e32-8ade-4034-bdf3-695e11a2ede6\HeaderImage.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\68ce3143-91d9-4eac-a35a-ea1281756a4c\HeaderImage.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AgriTechBlog.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>UserFiles\Users\68ce3143-91d9-4eac-a35a-ea1281756a4c\HeaderImage.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\68ce3143-91d9-4eac-a35a-ea1281756a4c\HeaderImage.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\7259f0e2-24d6-40a0-863e-ec4ceda2138a\HeaderImage.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AgriTechBlog.WebUI</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AgriTechBlog.WebUI</BasePath>
+      <BasePath>/</BasePath>
       <RelativePath>UserFiles\Users\7259f0e2-24d6-40a0-863e-ec4ceda2138a\HeaderImage.jpg</RelativePath>
       <AssetKind></AssetKind>
       <AssetMode></AssetMode>
@@ -1183,6 +1199,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\7259f0e2-24d6-40a0-863e-ec4ceda2138a\HeaderImage.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\d1dc2c37-5a77-41a9-8e9b-680f5271ed70\HeaderImage.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AgriTechBlog.WebUI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>UserFiles\Users\d1dc2c37-5a77-41a9-8e9b-680f5271ed70\HeaderImage.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\UserFiles\Users\d1dc2c37-5a77-41a9-8e9b-680f5271ed70\HeaderImage.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
